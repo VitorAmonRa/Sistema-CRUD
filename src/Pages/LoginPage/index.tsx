@@ -1,23 +1,19 @@
 import React from 'react';
-
-import { 
-  Container, 
-  Main, 
-  Title 
-} from './styles';
+import './styles.scss'
 
 
 const LoginPage: React.FC = () => {
   return (
-    <>
-      <Container>
-        <Main> 
-          <Title>
-            Comandas Online
-          </Title>
-        </Main>
-      </Container>
-    </>
+      <main className='main-div'>
+        <div className='title-div'>
+          <h1>Faça seu login aqui</h1>
+        <form action="">
+          <label htmlFor="email">seu email aqui</label>
+          <input type="email" name='email'/>
+        </form>
+        </div>
+      </main>
+
   )
 }
 
