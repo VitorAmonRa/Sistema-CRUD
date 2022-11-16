@@ -1,14 +1,13 @@
 import React from "react"
-import Global from './GlobalStyle/Global';
 import HomePage from "./Pages/HomePage/index.js";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from "./Pages/LoginPage";
+import './GlobalStyle/Global.scss'
 
 function App() {
 
   return (
     <>
-      <Global/>
       <Router>
         <Routes>
           <Route path="/" element={ <HomePage/> }/>
