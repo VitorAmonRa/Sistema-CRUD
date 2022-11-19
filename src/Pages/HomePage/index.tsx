@@ -1,17 +1,20 @@
-import React from 'react';
-import Navbar from '../../Components/Navbar';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import { Container } from './styles';
+import Global from '../../GlobalStyle/Global';
 
-const HomePage: React.FC = () => {
-  return (
+import { 
+  Container,
+} from './style';
+
+export const HomePage: React.FC = () => {
+
+  return(
     <>
-      <Container>
-        <Navbar/>
-      </Container>
-
+    <Global />
+        <Container>
+        </Container>
     </>
   );
 }
 
-export default HomePage;
+
