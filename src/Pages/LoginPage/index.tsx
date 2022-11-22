@@ -1,5 +1,8 @@
 import React, { useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
+import {  signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../services/firebaseConnection'
+import { toast } from 'react-toastify';
 import { 
   Container,
   Form,
@@ -10,17 +13,34 @@ import {
 export const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("")
   const [password, setPassoword] = useState("")
-
+  const navigate = useNavigate();
+  
 const handleLogin = (e: { preventDefault: () => void; }) =>{
   e.preventDefault();
+
+  if(email === '' || password === ''){
+    toast.error("Preencha todos os campos")
+    return
+  }
+  signInWithEmailAndPassword(auth, email , password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(userCredential)
+      toast.success("Bem-vindo")
+      navigate("/", {replace:true})
+    })
+    .catch((error) => {
+      toast.error("Email ou senha incorreta")
+    })
+
 }
 
   return(
     <Container>
       <Form onSubmit={handleLogin}>
         <h1>Faça seu login aqui</h1>
-        <p>eve.holt@reqres.in</p>
-        <p>cityslicka</p>
+        <p>teste@teste123.com</p>
+        <p>123123</p>
         <Field>
           <label htmlFor="email"> Email </label>
           <input 
@@ -40,10 +60,11 @@ const handleLogin = (e: { preventDefault: () => void; }) =>{
           onChange={(e) => setPassoword(e.target.value)}
           />
         </Field>
-        <button type='button'> Entrar </button>
+        <button type="submit" > Entrar </button>
       </Form>
     </Container>
   )
-    
-}
+}    
+
+
 
