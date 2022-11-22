@@ -3,12 +3,15 @@ import {HomePage} from "./Pages/HomePage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {LoginPage} from "./Pages/LoginPage";
 import Global from "./GlobalStyle/Global";
+import 'react-toastify/dist/ReactToastify.css'
+import {ToastContainer} from 'react-toastify'
 
 function App() {
 
   return (
     <>
     <Global/>
+    <ToastContainer autoClose={1500}/>
       <Router>
         <Routes>
           <Route path="/" element={ <HomePage/> }/>
