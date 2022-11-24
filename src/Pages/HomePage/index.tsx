@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { signOut } from "firebase/auth";
 import { auth } from '../../services/firebaseConnection'
 import {useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import Global from '../../GlobalStyle/Global';
 import { 
   Container,
 } from './style';
+import Navbar from '../../Components/Navbar';
 
 export const HomePage: React.FC = () => {
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ export const HomePage: React.FC = () => {
     <>
     <Global />
         <Container>
-          <div>Pagina HOME</div>
+          <Navbar/>
           <button onClick={() => handleLogOut()}></button>
         </Container>
     </>
