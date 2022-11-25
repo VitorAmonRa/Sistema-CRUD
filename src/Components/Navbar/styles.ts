@@ -4,7 +4,7 @@ export const ContainerNav = styled.div`
   width: 100%;
   height: 100vh;
   max-height: 70px;
-  background-color: yellow;
+  
 `;
 
 export const MainDiv = styled.nav`
@@ -13,6 +13,7 @@ export const MainDiv = styled.nav`
   justify-content: space-between;
   align-items: center;
   border-bottom: 3px solid black;
+  background-color: #F58A07;
 `;
 
 export const Title = styled.h1`
@@ -22,15 +23,14 @@ export const DivNav = styled.div`
   display: flex;
   height: 70px;
   padding: 20px;
-  background-color: yellow;
 `;
 export const Button = styled.button`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   margin: 0 30px;
-  padding: 5px 10px;
-  width: 80px;
-  height: 30px;
+  padding: 20px 40px;
+ /*  width: 80px;
+  height: 40px; */
   font-weight: bold;
   border: 2px solid black;
   cursor: pointer;

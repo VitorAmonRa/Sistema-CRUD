@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-image:linear-gradient(to bottom, #000000, #30345D);
+  background-image:linear-gradient(to bottom, #000000, #F58A07);
 `;
 
 export const Form = styled.form`
@@ -19,11 +19,15 @@ export const Form = styled.form`
   height: 400px;
   margin: 0 auto;
   border-radius: 10px;
-  background-color: /* #C0C2C4 */#FFF6F6;
-  border: 5px solid  #131313;
+  color: #fff;
+  /*  background-color: /* #C0C2C4 #FFF6F6 */
+ /*  border: 5px solid  #131313; */
     h1{
-      font-size: 35px;
+      font-size: 40px;
       padding: 10px 0 ;
+    }
+    p{
+      padding: 2px 0;
     }
     button{
       font-size:20px;
@@ -35,8 +39,7 @@ export const Form = styled.form`
       border: 3px outset  #232C33;
       cursor: pointer;
       :hover{
-        background-color: #30345D;
-        color:#fff
+        border: 4px  solid  #131313;
       }
     }
 `;
@@ -47,13 +50,15 @@ export const Field = styled.div`
   padding: 10px 0;
   label{
     margin: 5px;
-    font-weight:bold;
-    font-size:20px;
+    font-weight:bolder;
+    font-size:24px;
   }
   input{
     font-weight:bold;
     font-size: 20px;
-    width: 400px;
+    width: 600px;
+    height: 40px;
+    border: 3px solid  #131313;
   }
 `;
 
