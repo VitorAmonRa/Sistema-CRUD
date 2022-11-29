@@ -5,6 +5,7 @@ import {LoginPage} from "./Pages/LoginPage";
 import Global from "./GlobalStyle/Global";
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer} from 'react-toastify'
+import { Private } from "./Routes/Private";
 
 function App() {
 
@@ -14,8 +15,12 @@ function App() {
     <ToastContainer autoClose={1500}/>
       <Router>
         <Routes>
-          <Route path="/" element={ <HomePage/> }/>
           <Route path="login" element={ <LoginPage/> }/>
+          <Route path="/" element={ 
+          <Private>  
+            <HomePage/>  
+          </Private>
+        }/>
         </Routes>
       </Router>
     </>

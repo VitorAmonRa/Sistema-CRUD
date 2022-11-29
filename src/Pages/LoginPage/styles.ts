@@ -70,7 +70,7 @@ export const LoadingPage = styled.div`
   max-height: 100vh;
   width:100%;
   height:100vh;
-  background: linear-gradient(to left, #0B2047, #19489F, #4F83E3 );
+  background: linear-gradient(to left, #000000, #F58A07 );
   h1{
     display: flex;
     justify-content:center;
