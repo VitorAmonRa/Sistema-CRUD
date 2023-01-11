@@ -16,6 +16,7 @@ export const Container = styled.div`
 `;
 export const Form = styled.form`
     display:flex;
+    flex-direction: column;
     max-width:800px;
     max-height:600px;
     width:100%;
@@ -25,13 +26,22 @@ export const Form = styled.form`
 export const Field = styled.div`
     display:flex;
     flex-direction: column;
+    justify-content:center;
+    align-items:center;
     padding: 10px 0;
 `;
 export const Label = styled.label`
-
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px;
 `;
-export const Input = styled.input`
-
+export const InputText = styled.input` 
+  font-size: 15px;
+  width:100%;
+  height:100vh;
+  max-width: 400px;
+  height: 30px;
 `
+
 
 

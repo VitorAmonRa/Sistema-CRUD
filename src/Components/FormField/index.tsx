@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Field, Form, Input, Label } from './styles';
+import { Container, Field, Form, InputText, Label } from './styles';
 
 const FormField: React.FC = () => {
   return (
@@ -8,8 +8,12 @@ const FormField: React.FC = () => {
       <Container>
         <Form>
           <Field>
-            <Label>ADSA</Label>
-            <Input/>
+            <Label>Equipamentos</Label>
+            <InputText  type="text" name="equipments" id="equipments" required/>
+          </Field>
+          <Field>
+            <Label>Situação</Label>
+            <InputText id='situation' name='situation'/>
           </Field>
         </Form>
       </Container>
