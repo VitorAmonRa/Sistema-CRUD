@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Children } from 'react';
 
-import { Container, Field, Form, InputText, Label } from './styles';
+import { Container, Field, Form, InputText, Label, Select } from './styles';
 
-const FormField: React.FC = () => {
+const FormField = () => {
   return (
     <>
       <Container>
@@ -13,8 +13,15 @@ const FormField: React.FC = () => {
           </Field>
           <Field>
             <Label>Situação</Label>
-            <InputText id='situation' name='situation'/>
+            <Select name="equipments" id="equipments">
+              <option value="empty"></option>
+              <option value="Liberado">Liberado</option>
+              <option value="não-liberado">Não Liberado</option>
+              <option value="reserva">Reserva</option>
+              <option value="em-liberação">Em Liberação</option>
+            </Select>
           </Field>
+          <button>Enviar</button>
         </Form>
       </Container>
     </>
