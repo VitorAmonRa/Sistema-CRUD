@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-image:linear-gradient(to bottom, #000000, #F58A07);
+  background-image:linear-gradient(to bottom, #000000, #A0C1D1);
 `;
 
 export const Form = styled.form`
@@ -20,8 +20,6 @@ export const Form = styled.form`
   margin: 0 auto;
   border-radius: 10px;
   color: #fff;
-  /*  background-color: /* #C0C2C4 #FFF6F6 */
- /*  border: 5px solid  #131313; */
     h1{
       font-size: 40px;
       padding: 10px 0 ;
