@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ContainerNav, MainDiv, Title, DivNav, Button } from "./styles";
+import { async } from "@firebase/util";
 
-const Navbar: React.FC = () => {
+const Navbar = (data) => {
   const navigate = useNavigate();
 
   function handleLogOut() {
@@ -17,14 +18,21 @@ const Navbar: React.FC = () => {
         // An error happened.
       });
   }
+  function handleSwitch (data) {
+    const props = data
+    console.log("BotaoInterface",data) 
+    navigate("/InterfacePage")
+    
+  }
+
   return (
     <>
       <ContainerNav>
         <MainDiv>
           <Title>Home Page</Title>
           <DivNav>
-            <Button>Interface</Button>
-            <Button onClick={() => handleLogOut()}>Logout</Button>
+            <Button onClick={() => handleSwitch(data)}>Interface</Button>
+            <Button onClick={handleLogOut}>Logout</Button>
           </DivNav>
         </MainDiv>
       </ContainerNav>
