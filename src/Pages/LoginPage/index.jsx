@@ -10,12 +10,12 @@ import {
   LoadingPage
 } from './styles';
 
-export const LoginPage: React.FC = () => {
+export const LoginPage = () => {
   const [email, setEmail] = useState("")
   const [password, setPassoword] = useState("")
   const navigate = useNavigate();
   
-const handleLogin = (e: { preventDefault: () => void; }) =>{
+const handleLogin = (e) =>{
   e.preventDefault();
 
   if(email === '' || password === ''){

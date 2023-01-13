@@ -5,7 +5,7 @@ import { LoadingPage } from './styles'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { IChildren } from '../../util/types';
 
-export const Private = ({children}:IChildren ) => {
+export const Private = (children ) => {
     const [loading, setLoading] = useState(true);
     const [signed, setSigned] = useState(false);
     const navigate = useNavigate();

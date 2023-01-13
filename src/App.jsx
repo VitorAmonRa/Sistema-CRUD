@@ -6,6 +6,7 @@ import Global from "./GlobalStyle/Global";
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer} from 'react-toastify'
 import { Private } from "./Routes/Private";
+import InterfacePage from "./Pages/InterfacePage";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="login" element={ <LoginPage/> }/>
+          <Route path="InterfacePage" element={ <InterfacePage/> }/>
           <Route path="/" element={ 
           <Private>  
             <HomePage/>  

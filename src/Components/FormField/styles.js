@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ContainerForm = styled.div`
   display:flex;
   position:relative;
   justify-content:center;
