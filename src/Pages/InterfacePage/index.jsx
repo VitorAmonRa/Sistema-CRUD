@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Props } from '../../util/types';
-
 
 import { Container, SectionOne, SectionTwo, SituationDivs, SituationDivs2, Title} from './styles';
 
-const InterfacePage = (data) => {
-  console.log("Interface", data)
+export const InterfacePage = (data) => {
+  console.log("Interface",)
   return (
     <>
       <Container>

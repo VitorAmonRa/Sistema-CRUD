@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { ContainerNav, MainDiv, Title, DivNav, Button } from "./styles";
 import { async } from "@firebase/util";
 
-const Navbar = (data) => {
+export const Navbar = (data) => {
   const navigate = useNavigate();
 
   function handleLogOut() {

@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import Global from "../../GlobalStyle/Global";
 
-import { Container , ContainerForm, Field, Form, InputText, Label } from "./style";
+import { Container , ContainerForm, Field, Form, InputText, Label } from "./styles";
 import Navbar from "../../Components/Navbar";
-import FormField from "../../Components/FormField";
-import { Props } from "../../util/types";
-
 
 export const HomePage = () => {
   const [equipments, setEquipments] = useState('');
   const [situation, setSituation] = useState('');
-  const data = {
-    equipments: "",
-    situation: ""
-  }
+  const data = {equipments,situation}
 
   const handleSubmit = (e) =>{
     e.preventDefault();
