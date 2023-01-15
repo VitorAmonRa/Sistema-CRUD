@@ -23,10 +23,22 @@ export const InterfacePage = () => {
         })
       })
       setEquipments(list)
-      console.log("alo",equipments)
     })
   },[])
-
+  
+  const equipamentoLiberado = equipments.filter(equipments => equipments.situation == "Liberado")
+      equipamentoLiberado.forEach(equipments => {
+        /* console.log(equipamentoLiberado) */
+      })
+  const equipamentosNãoLiberados = equipments.filter(equipments => equipments.situation == "não-liberado")
+      equipamentosNãoLiberados.forEach(equipments => {
+        console.log("nAO LIBERADO",equipamentosNãoLiberados)
+      })
+      const equipamentosEmLiberação = equipments.filter(equipments => equipments.situation == "em-liberação")
+      equipamentosNãoLiberados.forEach(equipments => {
+        console.log("EM LIBERAÇÃO",equipamentosEmLiberação)
+      })
+  
   return (
     <>
       <Container>
@@ -36,12 +48,9 @@ export const InterfacePage = () => {
               <h1>Liberados</h1>
             </Title>
             <EquipmentsList >
-              {equipments.filter(element => element === "Liberado") ? (
-                equipments.map((item,index)=>(
-              <li key={index}>
-                {item.name}
-              </li>
-             ))): (null)}
+              {equipamentoLiberado.map((item,index) => (
+                <li key={index}>{item.name}</li>
+              ))}
             </EquipmentsList>
           </SituationDivs>
           <SituationDivs>
@@ -49,12 +58,9 @@ export const InterfacePage = () => {
               <h1>Em Liberação</h1>
             </Title>  
             <EquipmentsList>
-            {equipments.filter(element => element === "não-liberado") ? (
-                equipments.map((item,index)=>(
-              <li key={index}>
-                {item.name}
-              </li>
-             ))): (null)}
+            {equipamentosEmLiberação.map((item,index) => (
+                <li key={index}>{item.name}</li>
+              ))}
             </EquipmentsList>
           </SituationDivs>
           <SituationDivs>
@@ -62,12 +68,9 @@ export const InterfacePage = () => {
               <h1>Não Liberados</h1>
             </Title>
             <EquipmentsList>
-            {equipments.filter(element => element === "em-liberação") ? (
-                equipments.map((item,index)=>(
-              <li key={index}>
-                {item.name}
-              </li>
-             ))): (null)}
+            {equipamentosNãoLiberados.map((item,index) => (
+                <li key={index}>{item.name}</li>
+              ))}
             </EquipmentsList>
           </SituationDivs>
         </SectionOne>
