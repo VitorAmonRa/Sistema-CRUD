@@ -8,7 +8,8 @@ export const Container = styled.div`
     width: 100%;
     max-width: 100%;
     height: 100vh;
-    background-image:linear-gradient(to bottom, #000000, #A0C1D1);
+    /* background-image:linear-gradient(to bottom, #000000, #A0C1D1); */
+    background-color: #131516;
 `;
 export const SectionOne = styled.div`
     display:flex;
@@ -18,6 +19,7 @@ export const SectionOne = styled.div`
 `
 export const SituationDivs = styled.div`
     display: flex;
+    flex-direction:column;
     justify-content: space-between;
     align-items:center;
     width: 50%;
@@ -53,6 +55,33 @@ export const SituationDivs2 = styled.div`
     background-color:white;
     margin:5% 5%;
 ` 
-export const Title = styled.h1`
-    font-size: 20px;
+export const Title = styled.div`
+    display:flex;
+    justify-content:center;
+    padding: 5px 0;
+    width:100%;
+`
+export const EquipmentsList = styled.div`
+    display:flex;
+    flex-direction:column;
+    padding: 20px;
+    font-size:20px;
+    width:100%;
+    height:100vh;
+    li{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        width:100%;
+        padding: 2px;
+        font-size: 22px;
+        button{
+            color:#fff;
+            font-weight:bold;
+            border:2px solid #fff;
+            background-color:#333638;
+            padding:6px;
+            cursor: pointer;
+        }
+    }
 `

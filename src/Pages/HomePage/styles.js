@@ -1,5 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
+export const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: grey;
+`;
 export const ContainerForm = styled.div`
   display:flex;
   position:relative;
@@ -66,6 +71,7 @@ export const InputText = styled.input`
   height:100vh;
   max-width: 400px;
   height: 30px;
+  padding: 10px;
 `
 export const Select = styled.select`
   font-size: 15px;
@@ -75,5 +81,3 @@ export const Select = styled.select`
   max-height: 30px;
   cursor: pointer;
 `
-
-
