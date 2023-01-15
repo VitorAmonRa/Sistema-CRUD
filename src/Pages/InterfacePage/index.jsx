@@ -23,7 +23,7 @@ export const InterfacePage = () => {
         })
       })
       setEquipments(list)
-      console.log(list)
+      console.log("alo",equipments)
     })
   },[])
 
@@ -35,31 +35,46 @@ export const InterfacePage = () => {
             <Title>
               <h1>Liberados</h1>
             </Title>
-            <EquipmentsList>
-              {doc.id === "Liberados"} 
-              {equipments.map((item,index) => (
-                <li key={index}>
-                  {item.name}</li>
-              ))}
+            <EquipmentsList >
+              {equipments.filter(element => element === "Liberado") ? (
+                equipments.map((item,index)=>(
+              <li key={index}>
+                {item.name}
+              </li>
+             ))): (null)}
             </EquipmentsList>
           </SituationDivs>
           <SituationDivs>
             <Title>
               <h1>Em Liberação</h1>
             </Title>  
-            <EquipmentsList>sdada</EquipmentsList>
+            <EquipmentsList>
+            {equipments.filter(element => element === "não-liberado") ? (
+                equipments.map((item,index)=>(
+              <li key={index}>
+                {item.name}
+              </li>
+             ))): (null)}
+            </EquipmentsList>
           </SituationDivs>
           <SituationDivs>
             <Title>
               <h1>Não Liberados</h1>
             </Title>
-            <EquipmentsList></EquipmentsList>
+            <EquipmentsList>
+            {equipments.filter(element => element === "em-liberação") ? (
+                equipments.map((item,index)=>(
+              <li key={index}>
+                {item.name}
+              </li>
+             ))): (null)}
+            </EquipmentsList>
           </SituationDivs>
         </SectionOne>
-        <SectionTwo>
+       {/*  <SectionTwo>
           <SituationDivs2></SituationDivs2>
           <SituationDivs2></SituationDivs2>
-        </SectionTwo>
+        </SectionTwo> */}
       </Container>
     </>
   );

@@ -14,76 +14,23 @@ export const HomePage = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
+    // Adicionando equipamentos ao banco de dados
+     addDoc(collection(db,"Equipamentos"),{
+      name:equipments,
+      situation: situation,
+      created: new Date()
+      }).then(() => {
+        setEquipments("")
+        setSituation("")
+        console.log("Equipamento registrado")
+      })
+      .catch((error) => {
+        console.log("Erro ao cadatrar" + error)
+        toast.error("Error")
+      })
   }
 
-  // Adicionando equipamentos ao banco de dados
-   const equipmentsRef = collection(db,"Equipamentos");
-    //Equipamentos Liberados
-      if(situation === "Liberado"){
-        setDoc(doc(equipmentsRef, "Liberados"),{
-          name:equipments,
-          situation: situation,
-          created: new Date()
-        }).then(() => {
-          setEquipments("")
-          setSituation("")
-          console.log("Equipamento registrado")
-        })
-        .catch((error) => {
-          console.log("Erro ao cadatrar" + error)
-          toast.error("Error")
-        })
-      }
-    //Equipamentos Não Liberados
-      else if(situation === "naõ-liberado"){
-        setDoc(doc(equipmentsRef, "Não Liberados"),{
-          name:equipments,
-          situation: situation,
-          created: new Date()
-        }).then(() => {
-          setEquipments("")
-          setSituation("")
-          console.log("Equipamento registrado")
-        })
-        .catch((error) => {
-          console.log("Erro ao cadatrar" + error)
-          toast.error("Error")
-        })
-        
-      }
-    //Equipamentos Em Liberação
-      else if(situation === "em-liberação"){
-        setDoc(doc(equipmentsRef, "Em Liberação"),{
-          name:equipments,
-          situation: situation,
-          created: new Date()
-        }).then(() => {
-          setEquipments("")
-          setSituation("")
-          console.log("Equipamento registrado")
-        })
-        .catch((error) => {
-          console.log("Erro ao cadatrar" + error)
-          toast.error("Error")
-        })
-        
-      }
-     //Equipamentos Reservas
-      else if(situation === "reserva"){
-        setDoc(doc(equipmentsRef, "Reserva"),{
-          name:equipments,
-          situation: situation,
-          created: new Date()
-        }).then(() => {
-          setEquipments("")
-          setSituation("")
-          console.log("Equipamento registrado")
-        })
-        .catch((error) => {
-          console.log("Erro ao cadatrar" + error)
-          toast.error("Error")
-        })
-      }
+
   return (
     <>
       <Global />
