@@ -19,10 +19,7 @@ export const Navbar = (data) => {
       });
   }
   function handleSwitch (data) {
-    const props = data
-    console.log("BotaoInterface",data) 
     navigate("/InterfacePage")
-    
   }
 
   return (

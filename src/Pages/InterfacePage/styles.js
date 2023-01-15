@@ -18,6 +18,7 @@ export const SectionOne = styled.div`
 `
 export const SituationDivs = styled.div`
     display: flex;
+    flex-direction:column;
     justify-content: space-between;
     align-items:center;
     width: 50%;
@@ -53,6 +54,17 @@ export const SituationDivs2 = styled.div`
     background-color:white;
     margin:5% 5%;
 ` 
-export const Title = styled.h1`
-    font-size: 20px;
+export const Title = styled.div`
+    display:flex;
+    justify-content:center;
+    padding: 5px 0;
+    width:100%;
+`
+export const EquipmentsList = styled.div`
+    display:flex;
+    flex-direction:column;
+    padding: 20px;
+    font-size:20px;
+    width:100%;
+    height:100vh;
 `
