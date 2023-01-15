@@ -71,6 +71,7 @@ export const InputText = styled.input`
   height:100vh;
   max-width: 400px;
   height: 30px;
+  padding: 10px;
 `
 export const Select = styled.select`
   font-size: 15px;

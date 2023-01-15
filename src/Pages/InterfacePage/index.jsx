@@ -1,4 +1,4 @@
-import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../../services/firebaseConnection';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
@@ -8,6 +8,8 @@ import { Container, SectionOne, SectionTwo, SituationDivs, SituationDivs2, Title
 export const InterfacePage = () => {
   
   const [equipments, setEquipments] = useState([])
+
+ 
 
   useEffect(() => {
     const equipmentsRef = collection(db,"Equipamentos")
@@ -38,7 +40,11 @@ export const InterfacePage = () => {
       equipamentosNãoLiberados.forEach(equipments => {
         console.log("EM LIBERAÇÃO",equipamentosEmLiberação)
       })
-  
+      
+      async function handleDelete (id){
+        const docRef = doc(db,"Equipamentos",id)
+        await deleteDoc(docRef)
+      }
   return (
     <>
       <Container>
@@ -49,7 +55,12 @@ export const InterfacePage = () => {
             </Title>
             <EquipmentsList >
               {equipamentoLiberado.map((item,index) => (
-                <li key={index}>{item.name}</li>
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                    <button onClick={() => handleDelete(item.id)}>X</button>
+                  </li>
+                 </>
               ))}
             </EquipmentsList>
           </SituationDivs>
@@ -59,7 +70,12 @@ export const InterfacePage = () => {
             </Title>  
             <EquipmentsList>
             {equipamentosEmLiberação.map((item,index) => (
-                <li key={index}>{item.name}</li>
+                <>  
+                <li key={index}>
+                  {item.name}
+                  <button onClick={() => handleDelete(item.id)}>X</button>
+                 </li>
+                </>
               ))}
             </EquipmentsList>
           </SituationDivs>
@@ -69,7 +85,12 @@ export const InterfacePage = () => {
             </Title>
             <EquipmentsList>
             {equipamentosNãoLiberados.map((item,index) => (
-                <li key={index}>{item.name}</li>
+              <>
+                <li key={index}>
+                  {item.name}
+                  <button onClick={() => handleDelete(item.id)}>X</button>
+                </li>
+              </>
               ))}
             </EquipmentsList>
           </SituationDivs>
