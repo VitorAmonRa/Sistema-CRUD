@@ -1,5 +1,6 @@
 import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../../services/firebaseConnection';
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -7,6 +8,8 @@ import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquip
 
 export const InterfacePage = () => { 
   const [equipments, setEquipments] = useState([])
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const equipmentsRef = collection(db,"Equipamentos")
@@ -45,6 +48,9 @@ export const InterfacePage = () => {
         const docRef = doc(db,"Equipamentos",id)
         await deleteDoc(docRef)
       }
+      const handleSwitch = () => {
+        navigate("/", {replace:true})
+      }
   return (
     <>
       <Container>
@@ -58,7 +64,7 @@ export const InterfacePage = () => {
                  <>  
                   <li key={index}>
                     {item.name}
-                    <button onClick={() => handleDelete(item.id)}>X</button>
+                    {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
                   </li>
                  </>
               ))}
@@ -73,7 +79,7 @@ export const InterfacePage = () => {
                 <>  
                 <li key={index}>
                   {item.name}
-                  <button onClick={() => handleDelete(item.id)}>X</button>
+                  {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
                  </li>
                 </>
               ))}
@@ -88,7 +94,7 @@ export const InterfacePage = () => {
               <>
                 <li key={index}>
                   {item.name}
-                  <button onClick={() => handleDelete(item.id)}>X</button>
+                  {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
                 </li>
               </>
               ))}
@@ -103,15 +109,15 @@ export const InterfacePage = () => {
                  <>  
                   <li key={index}>
                     {item.name}
-                    <button onClick={() => handleDelete(item.id)}>X</button>
+                    {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
                   </li>
                  </>
               ))}
             </EquipmentsList>
           </BackupOfEquipments>
-{/*           <BackupOfEquipments>
-            <ResetButton>alo</ResetButton>
-          </BackupOfEquipments> */}
+          <BackupOfEquipments>
+            <ResetButton onClick={handleSwitch}>Admin</ResetButton>
+          </BackupOfEquipments>
         </SectionTwo>
       </Container>
     </>

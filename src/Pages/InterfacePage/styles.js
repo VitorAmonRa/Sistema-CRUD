@@ -89,15 +89,24 @@ export const BackupOfEquipments = styled.div`
     margin:5% 5%;
     background-color:#EBEEFC;
     border: 2px solid #333638;
+    &:last-child{
+        display:flex;
+        align-items:center;
+        padding: 20px 0;
+        background-color: #131516;
+        border: none;
+    }
 ` 
 export const ResetButton = styled.button`
   display:flex;
   justify-content:center;
   align-items:center;
+  font-size: 20px;
   width:100%;
   height: 100vh;
   max-width: 300px;
   max-height: 40px;
+  cursor: pointer;
 `
 
 

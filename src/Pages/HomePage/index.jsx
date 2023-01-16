@@ -36,11 +36,6 @@ export const HomePage = () => {
         toast.error("Error")
       })
   }
-/*   async function handleDelete (id){
-    console.log("clicou")
-    const docRef = doc(db,"Equipamentos",id)
-    await deleteDoc(docRef)
-  } */
 
   return (
     <>
@@ -72,7 +67,6 @@ export const HomePage = () => {
               </Field>
               <ButtonSection>
                 <button type='submit'>Enviar</button>
-{/*                 <button type='button' onClick={() => handleDelete(item.id)}>Resetar a Interface</button> */}
               </ButtonSection>
             </Form>
           </ContainerForm>
