@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Global from "../../GlobalStyle/Global";
 
-import { Container , ContainerForm, Field, Form, InputText, Label, Select } from "./styles";
+import { Container , ContainerForm, Field, Form, InputText, Label, Select,ButtonSection } from "./styles";
 import Navbar from "../../Components/Navbar";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection, doc, setDoc, deleteDoc } from "firebase/firestore";
 import { db } from '../../services/firebaseConnection';
 import { toast } from "react-toastify";
 
@@ -14,7 +14,14 @@ export const HomePage = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
+
     // Adicionando equipamentos ao banco de dados
+
+    if(situation === ""){
+      toast.error("Selecione um campo")
+      return
+    }
+
      addDoc(collection(db,"Equipamentos"),{
       name:equipments,
       situation: situation,
@@ -29,7 +36,11 @@ export const HomePage = () => {
         toast.error("Error")
       })
   }
-
+/*   async function handleDelete (id){
+    console.log("clicou")
+    const docRef = doc(db,"Equipamentos",id)
+    await deleteDoc(docRef)
+  } */
 
   return (
     <>
@@ -51,23 +62,18 @@ export const HomePage = () => {
               </Field>
               <Field>
                 <Label>Situação</Label>
-               {/*  <InputText  
-                type="text" 
-                name="situation" 
-                id="situation" 
-                required
-                value={situation}
-                onChange={(e) => setSituation(e.target.value)}
-                /> */}
                 <Select name="equipments" id="equipments" value={situation} onChange={(e) => setSituation(e.target.value)}>
-                  <option value="empty"></option>
+                  <option value="empty">Selecione uma opção</option>
                   <option value="Liberado">Liberado</option>
                   <option value="não-liberado">Não Liberado</option>
                   <option value="reserva">Reserva</option>
                   <option value="em-liberação">Em Liberação</option>
                 </Select>
               </Field>
-              <button type='submit'>Enviar</button>
+              <ButtonSection>
+                <button type='submit'>Enviar</button>
+{/*                 <button type='button' onClick={() => handleDelete(item.id)}>Resetar a Interface</button> */}
+              </ButtonSection>
             </Form>
           </ContainerForm>
         </Container>

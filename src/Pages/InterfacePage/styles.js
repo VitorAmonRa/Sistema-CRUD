@@ -13,11 +13,12 @@ export const Container = styled.div`
 `;
 export const SectionOne = styled.div`
     display:flex;
+    justify-content:space-evenly;
     width: 100%;
     max-width: 100%;
     height: 100vh;
 `
-export const SituationDivs = styled.div`
+export const SituationOfEquipments = styled.div`
     display: flex;
     flex-direction:column;
     justify-content: space-between;
@@ -37,24 +38,6 @@ export const SituationDivs = styled.div`
         border:5px solid red;
     }
 `
-export const SectionTwo = styled.div`
-    display:flex;
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
-`
-
-export const SituationDivs2 = styled.div`
-    display: flex;
-    flex-direction:column;
-    justify-content:space-between;
-    width: 100%;
-    height: 100vh;
-    max-width: 700px;
-    max-height: 300px;
-    background-color:white;
-    margin:5% 5%;
-` 
 export const Title = styled.div`
     display:flex;
     justify-content:center;
@@ -64,7 +47,7 @@ export const Title = styled.div`
 export const EquipmentsList = styled.div`
     display:flex;
     flex-direction:column;
-    padding: 20px;
+    padding: 15px 10px ;
     font-size:20px;
     width:100%;
     height:100vh;
@@ -74,6 +57,7 @@ export const EquipmentsList = styled.div`
         justify-content:space-between;
         width:100%;
         padding: 2px;
+        border-bottom: 2px solid black;
         font-size: 22px;
         button{
             color:#fff;
@@ -85,3 +69,35 @@ export const EquipmentsList = styled.div`
         }
     }
 `
+export const SectionTwo = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+`
+
+export const BackupOfEquipments = styled.div`
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width: 100%;
+    height: 100vh;
+    max-width: 700px;
+    max-height: 320px;
+    margin:5% 5%;
+    background-color:#EBEEFC;
+    border: 2px solid #333638;
+` 
+export const ResetButton = styled.button`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height: 100vh;
+  max-width: 300px;
+  max-height: 40px;
+`
+
+
