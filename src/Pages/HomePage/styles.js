@@ -28,27 +28,7 @@ export const Form = styled.form`
     width:100%;
     height:100%;
     /* background-color:gray; */
-    button{
-      display:flex;
-      flex-direction: column;
-      justify-content:center;
-      align-self: center;
-      align-items:center;
-      padding: 20px 0;
-      margin: 20px;
-      font-size:20px;
-      font-weight: bold;
-      width: 100%;
-      height:100vh;
-      max-width: 200px;
-      max-height: 30px;
-      cursor: pointer;
-      border: 2px solid black;
-      border-radius: 5px;
-    &:hover{
-      background-color:#A0C1D1;
-    }
-    }
+
 `;
 export const Field = styled.div`
     display:flex;
@@ -72,12 +52,51 @@ export const InputText = styled.input`
   max-width: 400px;
   height: 30px;
   padding: 10px;
+  cursor: pointer;
+  &:hover{
+      border: 2px solid black;
+    }
 `
 export const Select = styled.select`
-  font-size: 15px;
+  font-size: 17px;
   width:100%;
   height:100vh;
   max-width: 400px;
   max-height: 30px;
+  padding: 5px;
   cursor: pointer;
+  font-weight: bold;
+  option{
+    font-weight: bold;
+    background-color:#333638;
+    color:#fff;
+    cursor: pointer;
+  }
+  &:hover{
+      border: 2px solid black;
+      cursor: pointer;
+    }
 `
+export const ButtonSection = styled.div`
+  display:flex;
+  justify-content:space-evenly;
+    button{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding: 20px 0;
+      margin: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      width: 100%;
+      height:100vh;
+      max-width: 210px;
+      max-height: 30px;
+      cursor: pointer;
+      border: 2px solid black;
+      border-radius: 5px;
+    &:hover{
+      background-color:#A0C1D1;
+    }
+    }
+` 

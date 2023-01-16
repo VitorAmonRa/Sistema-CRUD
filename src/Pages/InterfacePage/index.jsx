@@ -3,13 +3,10 @@ import { db } from '../../services/firebaseConnection';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
-import { Container, SectionOne, SectionTwo, SituationDivs, SituationDivs2, Title, EquipmentsList} from './styles';
+import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,ResetButton } from './styles';
 
-export const InterfacePage = () => {
-  
+export const InterfacePage = () => { 
   const [equipments, setEquipments] = useState([])
-
- 
 
   useEffect(() => {
     const equipmentsRef = collection(db,"Equipamentos")
@@ -30,18 +27,21 @@ export const InterfacePage = () => {
   
   const equipamentoLiberado = equipments.filter(equipments => equipments.situation == "Liberado")
       equipamentoLiberado.forEach(equipments => {
-        /* console.log(equipamentoLiberado) */
       })
   const equipamentosNãoLiberados = equipments.filter(equipments => equipments.situation == "não-liberado")
       equipamentosNãoLiberados.forEach(equipments => {
         console.log("nAO LIBERADO",equipamentosNãoLiberados)
       })
-      const equipamentosEmLiberação = equipments.filter(equipments => equipments.situation == "em-liberação")
+  const equipamentosEmLiberação = equipments.filter(equipments => equipments.situation == "em-liberação")
       equipamentosNãoLiberados.forEach(equipments => {
         console.log("EM LIBERAÇÃO",equipamentosEmLiberação)
       })
+  const equipamentosReservas = equipments.filter(equipments => equipments.situation == "reserva")
+      equipamentosReservas.forEach(equipments => {
+        console.log("RESERVA",equipamentosReservas)
+      })    
       
-      async function handleDelete (id){
+       async function handleDelete (id){
         const docRef = doc(db,"Equipamentos",id)
         await deleteDoc(docRef)
       }
@@ -49,7 +49,7 @@ export const InterfacePage = () => {
     <>
       <Container>
         <SectionOne>
-          <SituationDivs>
+          <SituationOfEquipments>
             <Title>
               <h1>Liberados</h1>
             </Title>
@@ -63,8 +63,8 @@ export const InterfacePage = () => {
                  </>
               ))}
             </EquipmentsList>
-          </SituationDivs>
-          <SituationDivs>
+          </SituationOfEquipments>
+          <SituationOfEquipments>
             <Title>
               <h1>Em Liberação</h1>
             </Title>  
@@ -78,8 +78,8 @@ export const InterfacePage = () => {
                 </>
               ))}
             </EquipmentsList>
-          </SituationDivs>
-          <SituationDivs>
+          </SituationOfEquipments>
+          <SituationOfEquipments>
             <Title>
               <h1>Não Liberados</h1>
             </Title>
@@ -93,12 +93,26 @@ export const InterfacePage = () => {
               </>
               ))}
             </EquipmentsList>
-          </SituationDivs>
+          </SituationOfEquipments>
         </SectionOne>
-       {/*  <SectionTwo>
-          <SituationDivs2></SituationDivs2>
-          <SituationDivs2></SituationDivs2>
-        </SectionTwo> */}
+        <SectionTwo>
+          <BackupOfEquipments>
+            <Title><h1>Spreader's Reservas</h1></Title>
+            <EquipmentsList >
+              {equipamentosReservas.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                    <button onClick={() => handleDelete(item.id)}>X</button>
+                  </li>
+                 </>
+              ))}
+            </EquipmentsList>
+          </BackupOfEquipments>
+{/*           <BackupOfEquipments>
+            <ResetButton>alo</ResetButton>
+          </BackupOfEquipments> */}
+        </SectionTwo>
       </Container>
     </>
   );

@@ -24,6 +24,7 @@ export const DivNav = styled.div`
   display: flex;
   height: 70px;
   padding: 20px;
+  text-decoration: none;
 `;
 export const Button = styled.button`
   display: flex;
@@ -34,7 +35,15 @@ export const Button = styled.button`
   font-weight: bold;
   border: 2px solid black;
   color:black;
+  text-decoration: none;
   cursor: pointer;
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  &:hover{
+      border: 3px solid black;
+    }
 `;
 
 

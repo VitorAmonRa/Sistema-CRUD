@@ -37,6 +37,7 @@ export const Form = styled.form`
       border: 3px outset  #232C33;
       cursor: pointer;
       :hover{
+        background-color:#A0C1D1;
         border: 4px  solid  #131313;
       }
     }
@@ -57,6 +58,7 @@ export const Field = styled.div`
     width: 600px;
     height: 40px;
     border: 3px solid  #131313;
+    padding: 4px 8px;
   }
 `;
 
