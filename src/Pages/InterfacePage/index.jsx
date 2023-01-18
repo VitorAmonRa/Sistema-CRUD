@@ -3,6 +3,7 @@ import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { MdOutlineLogout } from 'react-icons/md'
 
 import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,ResetButton } from './styles';
 
@@ -64,7 +65,6 @@ export const InterfacePage = () => {
                  <>  
                   <li key={index}>
                     {item.name}
-                    {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
                   </li>
                  </>
               ))}
@@ -79,7 +79,6 @@ export const InterfacePage = () => {
                 <>  
                 <li key={index}>
                   {item.name}
-                  {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
                  </li>
                 </>
               ))}
@@ -94,7 +93,6 @@ export const InterfacePage = () => {
               <>
                 <li key={index}>
                   {item.name}
-                  {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
                 </li>
               </>
               ))}
@@ -108,15 +106,11 @@ export const InterfacePage = () => {
               {equipamentosReservas.map((item,index) => (
                  <>  
                   <li key={index}>
-                    {item.name}
-                    {/* <button onClick={() => handleDelete(item.id)}>X</button> */}
+                    <p>{item.name}</p>
                   </li>
                  </>
               ))}
             </EquipmentsList>
-          </BackupOfEquipments>
-          <BackupOfEquipments>
-            <ResetButton onClick={handleSwitch}>Admin</ResetButton>
           </BackupOfEquipments>
         </SectionTwo>
       </Container>

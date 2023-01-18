@@ -18,7 +18,9 @@ export const MainDiv = styled.nav`
 
 export const Title = styled.h1`
   padding: 10px 0 0 10px;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 export const DivNav = styled.div`
   display: flex;
