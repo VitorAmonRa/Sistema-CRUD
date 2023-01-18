@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    font-family: Arial, Helvetica, sans-serif;
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -54,10 +55,11 @@ export const EquipmentsList = styled.div`
     li{
         display:flex;
         flex-direction:row;
-        justify-content:space-between;
+        justify-content:center;
         width:100%;
-        padding: 2px;
-        border-bottom: 2px solid black;
+        padding: 2px 0 ;
+        margin:5px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
         font-size: 22px;
         button{
             color:#fff;
@@ -81,7 +83,7 @@ export const SectionTwo = styled.div`
 export const BackupOfEquipments = styled.div`
     display: flex;
     flex-direction:column;
-    justify-content:space-between;
+    justify-content:center;
     width: 100%;
     height: 100vh;
     max-width: 700px;
@@ -89,15 +91,30 @@ export const BackupOfEquipments = styled.div`
     margin:5% 5%;
     background-color:#EBEEFC;
     border: 2px solid #333638;
+    li{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        width:100%;
+        padding: 2px 0 ;
+        margin:5px 0;
+        border-bottom: 2px dashed black ;
+        font-size: 22px;
+        p{
+            font-weight:bold;
+        }
+    }
 ` 
 export const ResetButton = styled.button`
   display:flex;
   justify-content:center;
   align-items:center;
+  font-size: 20px;
   width:100%;
   height: 100vh;
   max-width: 300px;
   max-height: 40px;
+  cursor: pointer;
 `
 
 

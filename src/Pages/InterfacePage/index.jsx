@@ -1,12 +1,16 @@
 import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { db } from '../../services/firebaseConnection';
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { MdOutlineLogout } from 'react-icons/md'
 
 import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,ResetButton } from './styles';
 
 export const InterfacePage = () => { 
   const [equipments, setEquipments] = useState([])
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const equipmentsRef = collection(db,"Equipamentos")
@@ -45,6 +49,9 @@ export const InterfacePage = () => {
         const docRef = doc(db,"Equipamentos",id)
         await deleteDoc(docRef)
       }
+      const handleSwitch = () => {
+        navigate("/", {replace:true})
+      }
   return (
     <>
       <Container>
@@ -58,7 +65,6 @@ export const InterfacePage = () => {
                  <>  
                   <li key={index}>
                     {item.name}
-                    <button onClick={() => handleDelete(item.id)}>X</button>
                   </li>
                  </>
               ))}
@@ -73,7 +79,6 @@ export const InterfacePage = () => {
                 <>  
                 <li key={index}>
                   {item.name}
-                  <button onClick={() => handleDelete(item.id)}>X</button>
                  </li>
                 </>
               ))}
@@ -88,7 +93,6 @@ export const InterfacePage = () => {
               <>
                 <li key={index}>
                   {item.name}
-                  <button onClick={() => handleDelete(item.id)}>X</button>
                 </li>
               </>
               ))}
@@ -102,16 +106,12 @@ export const InterfacePage = () => {
               {equipamentosReservas.map((item,index) => (
                  <>  
                   <li key={index}>
-                    {item.name}
-                    <button onClick={() => handleDelete(item.id)}>X</button>
+                    <p>{item.name}</p>
                   </li>
                  </>
               ))}
             </EquipmentsList>
           </BackupOfEquipments>
-{/*           <BackupOfEquipments>
-            <ResetButton>alo</ResetButton>
-          </BackupOfEquipments> */}
         </SectionTwo>
       </Container>
     </>

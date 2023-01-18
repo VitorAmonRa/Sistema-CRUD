@@ -1,27 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Global from "../../GlobalStyle/Global";
 
-import { Container , ContainerForm, Field, Form, InputText, Label, Select,ButtonSection } from "./styles";
+import { Container , ContainerForm, Field, Form, InputText, Label, Select,ButtonSection, ModalSection, ModalDiv } from "./styles";
 import Navbar from "../../Components/Navbar";
-import { addDoc, collection, doc, setDoc, deleteDoc } from "firebase/firestore";
+import { addDoc, collection, doc, setDoc, deleteDoc, onSnapshot, orderBy, query, deleteField } from "firebase/firestore";
 import { db } from '../../services/firebaseConnection';
 import { toast } from "react-toastify";
+import { async } from "@firebase/util";
 
 
 export const HomePage = () => {
   const [equipments, setEquipments] = useState('');
   const [situation, setSituation] = useState({});
+  const [equipmentsModal, setEquipmentsModal] = useState([]);
 
+
+  useEffect(() => {
+    const equipmentsRef = collection(db,"Equipamentos")
+    const queryRef = query(equipmentsRef,orderBy("created","asc"))
+
+    const unsub = onSnapshot(queryRef,(snapshot) => {
+      let list = []
+      snapshot.forEach((doc) => {
+        list.push({
+          id: doc.id,
+          name:doc.data().name,
+          situation:doc.data().situation,
+          created:doc.data().created 
+        })
+      })
+      setEquipmentsModal(list)
+    })
+  },[])
+  
+  async function handleDelete (id){
+    const docRef = doc(db,"Equipamentos",id)
+    toast.success("Equipamento deletado com sucesso")
+    await deleteDoc(docRef)
+  
+  }
+  
   const handleSubmit = (e) =>{
     e.preventDefault();
 
-    // Adicionando equipamentos ao banco de dados
-
-    if(situation === ""){
-      toast.error("Selecione um campo")
+    if(!situation ){
+      toast.error("Selecione uma opção")
       return
     }
-
+    
+    // Adicionando equipamentos ao banco de dados
      addDoc(collection(db,"Equipamentos"),{
       name:equipments,
       situation: situation,
@@ -36,11 +63,8 @@ export const HomePage = () => {
         toast.error("Error")
       })
   }
-/*   async function handleDelete (id){
-    console.log("clicou")
-    const docRef = doc(db,"Equipamentos",id)
-    await deleteDoc(docRef)
-  } */
+
+
 
   return (
     <>
@@ -55,14 +79,14 @@ export const HomePage = () => {
                 type="text" 
                 name="equipments" 
                 id="equipments" 
-                required
                 value={equipments}
                 onChange={(e) => setEquipments(e.target.value)}
+                required
               />
               </Field>
               <Field>
                 <Label>Situação</Label>
-                <Select name="equipments" id="equipments" value={situation} onChange={(e) => setSituation(e.target.value)}>
+                <Select name="equipments" id="equipments" value={situation} onChange={(e) => setSituation(e.target.value)}  >
                   <option value="empty">Selecione uma opção</option>
                   <option value="Liberado">Liberado</option>
                   <option value="não-liberado">Não Liberado</option>
@@ -72,9 +96,22 @@ export const HomePage = () => {
               </Field>
               <ButtonSection>
                 <button type='submit'>Enviar</button>
-{/*                 <button type='button' onClick={() => handleDelete(item.id)}>Resetar a Interface</button> */}
+               {/*  <button type='button' onClick={() => handleFullReset(equipmentsModal)}>Resetar Interface</button> */}
               </ButtonSection>
             </Form>
+              {equipmentsModal.length > 0 ? (
+              <ModalSection>
+                <ModalDiv>
+             {equipmentsModal.map((item,index) => (
+                 <>  
+                  <div key={index}>
+                    <p>{item.name}</p>
+                    <button onClick={() => handleDelete(item.id)}>X</button>
+                  </div>
+                 </>
+              ))}
+                </ModalDiv>
+              </ModalSection>) : (<></>)}
           </ContainerForm>
         </Container>
     </>

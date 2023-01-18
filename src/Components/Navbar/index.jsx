@@ -18,15 +18,11 @@ export const Navbar = (data) => {
         // An error happened.
       });
   }
-/*   function handleSwitch (data) {
-    navigate("/InterfacePage") 
-  } */
-
   return (
     <>
       <ContainerNav>
         <MainDiv>
-          <Title>Home Page</Title>
+          <Title>Admin Page</Title>
           <DivNav>
             <Button /* onClick={() => handleSwitch(data)} */><Link to="InterfacePage">Interface</Link></Button>
             <Button onClick={handleLogOut}>Logout</Button>

@@ -16,13 +16,13 @@ function App() {
     <ToastContainer autoClose={1500}/>
       <Router>
         <Routes>
+          <Route path="InterfacePage" /* index  */element={ <InterfacePage/> }/>
           <Route path="login" element={ <LoginPage/> }/>
-          <Route path="InterfacePage" element={ <InterfacePage/> }/>
           <Route path="/" element={ 
-          <Private>  
-            <HomePage/>  
-          </Private>
-        }/>
+            <Private>  
+              <HomePage/>  
+            </Private>
+          }/>
         </Routes>
       </Router>
     </>
