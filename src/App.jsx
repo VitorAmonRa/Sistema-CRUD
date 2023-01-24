@@ -16,7 +16,7 @@ function App() {
     <ToastContainer autoClose={1500}/>
       <Router>
         <Routes>
-          <Route path="InterfacePage" /* index  */element={ <InterfacePage/> }/>
+          <Route path="InterfacePage" element={ <InterfacePage/> }/>
           <Route path="login" element={ <LoginPage/> }/>
           <Route path="/" element={ 
             <Private>  

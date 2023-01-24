@@ -24,7 +24,7 @@ export const Navbar = (data) => {
         <MainDiv>
           <Title>Admin Page</Title>
           <DivNav>
-            <Button /* onClick={() => handleSwitch(data)} */><Link to="InterfacePage">Interface</Link></Button>
+            <Button><Link to="InterfacePage" target="_blank">Interface</Link></Button>
             <Button onClick={handleLogOut}>Logout</Button>
           </DivNav>
         </MainDiv>
