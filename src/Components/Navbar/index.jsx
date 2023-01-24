@@ -24,7 +24,7 @@ export const Navbar = (data) => {
         <MainDiv>
           <Title>Admin Page</Title>
           <DivNav>
-            <Button><Link to="../../Pages/InterfacePage">Interface</Link></Button>
+            <Button><Link to="InterfacePage" relative="path">Interface</Link></Button>
             <Button onClick={handleLogOut}>Logout</Button>
           </DivNav>
         </MainDiv>
