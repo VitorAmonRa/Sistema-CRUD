@@ -96,7 +96,6 @@ export const HomePage = () => {
               </Field>
               <ButtonSection>
                 <button type='submit'>Enviar</button>
-               {/*  <button type='button' onClick={() => handleFullReset(equipmentsModal)}>Resetar Interface</button> */}
               </ButtonSection>
             </Form>
               {equipmentsModal.length > 0 ? (
