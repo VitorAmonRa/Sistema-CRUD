@@ -3,14 +3,14 @@ import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { MdOutlineLogout } from 'react-icons/md'
+import { GrUserAdmin } from 'react-icons/gr'
+import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
+import { Burger } from '../../Components/Burger'
 
-import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,ResetButton } from './styles';
+export const PreviewPage = () => { 
 
-export const InterfacePage = () => { 
   const [equipments, setEquipments] = useState([])
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const equipmentsRef = collection(db,"Equipamentos")
@@ -49,12 +49,14 @@ export const InterfacePage = () => {
         const docRef = doc(db,"Equipamentos",id)
         await deleteDoc(docRef)
       }
-      const handleSwitch = () => {
-        navigate("/", {replace:true})
-      }
+     
+
+ 
+    
   return (
     <>
       <Container>
+        <Burger/> 
         <SectionOne>
           <SituationOfEquipments>
             <Title>
@@ -112,6 +114,7 @@ export const InterfacePage = () => {
               ))}
             </EquipmentsList>
           </BackupOfEquipments>
+          <div ><span id="relogio"></span></div>
         </SectionTwo>
       </Container>
     </>
@@ -120,6 +123,6 @@ export const InterfacePage = () => {
 }
 
 
-export default InterfacePage;
+export default PreviewPage;
 
 

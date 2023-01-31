@@ -27,18 +27,20 @@ export const Form = styled.form`
     p{
       padding: 2px 0;
     }
-    button{
-      font-size:20px;
-      font-weight: bold;
-      margin: 20px;
-      width: 250px;
-      height:50px;
-      background-color: #fff;
-      border: 3px outset  #232C33;
-      cursor: pointer;
-      :hover{
-        background-color:#A0C1D1;
-        border: 4px  solid  #131313;
+    .button-div{
+      button{
+        font-size:20px;
+        font-weight: bold;
+        margin: 20px;
+        width: 250px;
+        height:50px;
+        background-color: #fff;
+        border: 3px outset  #232C33;
+        cursor: pointer;
+        :hover{
+          background-color:#A0C1D1;
+          border: 4px  solid  #131313;
+        }
       }
     }
 `;
