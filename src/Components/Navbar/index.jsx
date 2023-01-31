@@ -22,9 +22,9 @@ export const Navbar = (data) => {
     <>
       <ContainerNav>
         <MainDiv>
-          <Title>Admin Page</Title>
+          <Title>Admin</Title>
           <DivNav>
-            <Button><Link to="InterfacePage" relative="path">Interface</Link></Button>
+            <Button><Link to="PreviewPage" relative="path">Preview</Link></Button>
             <Button onClick={handleLogOut}>Logout</Button>
           </DivNav>
         </MainDiv>

@@ -6,7 +6,7 @@ import Global from "./GlobalStyle/Global";
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer} from 'react-toastify'
 import { Private } from "./Routes/Private";
-import InterfacePage from "./Pages/InterfacePage";
+import PreviewPage from "./Pages/PreviewPage";
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
     <ToastContainer autoClose={1500}/>
       <Router>
         <Routes>
-          <Route path="InterfacePage" element={ <InterfacePage/> }/>
+          <Route path="PreviewPage" element={ <PreviewPage/> }/>
           <Route path="login" element={ <LoginPage/> }/>
           <Route path="/" element={ 
             <Private>  

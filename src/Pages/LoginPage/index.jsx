@@ -34,6 +34,9 @@ const handleLogin = (e) =>{
     })
 
 }
+  const handleSwitchPreview = () => {
+    navigate("/PreviewPage", {replace:true})
+  }
 
   return(
     <Container>
@@ -60,7 +63,10 @@ const handleLogin = (e) =>{
           onChange={(e) => setPassoword(e.target.value)}
           />
         </Field>
-        <button type="submit" > Entrar </button>
+        <div className='button-div'>
+          <button type="submit" > Entrar </button>
+          <button type="button" onClick={handleSwitchPreview}> Preview </button>
+        </div>
       </Form>
     </Container>
   )
