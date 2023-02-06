@@ -1,5 +1,5 @@
 import React from "react"
-import {HomePage} from "./Pages/HomePage";
+import { AdminPage } from "./Pages/AdminPage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {LoginPage} from "./Pages/LoginPage";
 import Global from "./GlobalStyle/Global";
@@ -20,7 +20,7 @@ function App() {
           <Route path="login" element={ <LoginPage/> }/>
           <Route path="/" element={ 
             <Private>  
-              <HomePage/>  
+              <AdminPage/>  
             </Private>
           }/>
         </Routes>

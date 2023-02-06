@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { async } from "@firebase/util";
 
 
-export const HomePage = () => {
+export const AdminPage = () => {
   const [equipments, setEquipments] = useState('');
   const [situation, setSituation] = useState({});
   const [equipmentsModal, setEquipmentsModal] = useState([]);
