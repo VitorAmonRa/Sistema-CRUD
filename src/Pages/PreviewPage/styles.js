@@ -2,16 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     font-family: Arial, Helvetica, sans-serif;
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
+    background-color: #131516;
     width: 100%;
     max-width: 100%;
     height: 100%;
-    /* max-height:200vh; */
-    /* background-image:linear-gradient(to bottom, #000000, #A0C1D1); */
-    background-color: #131516;
 `;
 export const SectionOne = styled.div`
     display:flex;
@@ -26,14 +20,13 @@ export const SituationOfEquipments = styled.div`
     align-items:center;
     width: 50%;
     height: 100%;
-    max-width: 400px;
+    max-width: 500px;
     max-height: 100%;
     background-color:#333638;
     color:white;
     border:5px solid green;
     margin:2% 5%;
     &:nth-child(2){
-
         border:5px solid yellow;
     }
     &:nth-child(3){
@@ -43,8 +36,10 @@ export const SituationOfEquipments = styled.div`
 export const Title = styled.div`
     display:flex;
     justify-content:center;
+    margin: 2px 0; 
     padding: 5px 0;
     width:100%;
+    border-bottom: 2px solid white;
 `
 export const EquipmentsList = styled.div`
     display:flex;
@@ -55,20 +50,21 @@ export const EquipmentsList = styled.div`
     li{
         display:flex;
         flex-direction:row;
-        justify-content:center;
+        justify-content:start;
+        padding: 0 10px;
         width:100%;
         margin:5px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
+        border-bottom: 1px dashed rgba(255,255,255,0.2);
         font-size: 22px;
     }
 `
 export const SectionTwo = styled.div`
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:space-around;
     width: 100%;
     max-width: 100%;
-    height:100%;
+    background-color: #131516;
 `
 
 export const BackupOfEquipments = styled.div`
@@ -80,6 +76,7 @@ export const BackupOfEquipments = styled.div`
     max-width: 700px;
     max-height: 320px;
     margin:5% 7%;
+    padding: 5px ;
     background-color:#EBEEFC;
     border: 2px solid #333638;
 
@@ -98,7 +95,7 @@ export const BackupOfEquipments = styled.div`
     }
     &:nth-child(1){
         width: 100%;
-        max-width: 400px;
+        max-width: 480px;
     }
     &:nth-child(2){
         div{
