@@ -1,4 +1,5 @@
 import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { auth } from '../../services/firebaseConnection';
 import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -6,16 +7,18 @@ import { useEffect } from 'react';
 import { GrUserAdmin } from 'react-icons/gr'
 import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
 import { Burger } from '../../Components/Burger'
+import DatePicker from 'react-date-picker';
+
 
 export const PreviewPage = () => { 
 
   const [equipments, setEquipments] = useState([])
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     const equipmentsRef = collection(db,"Equipamentos")
     const queryRef = query(equipmentsRef,orderBy("created","asc"))
-
+    
     const unsub = onSnapshot(queryRef,(snapshot) => {
       let list = []
       snapshot.forEach((doc) => {
@@ -30,29 +33,27 @@ export const PreviewPage = () => {
   },[])
   
   const equipamentoLiberado = equipments.filter(equipments => equipments.situation == "Liberado")
-      equipamentoLiberado.forEach(equipments => {
-      })
+  equipamentoLiberado.forEach(equipments => {
+  })
   const equipamentosNãoLiberados = equipments.filter(equipments => equipments.situation == "não-liberado")
-      equipamentosNãoLiberados.forEach(equipments => {
-        console.log("nAO LIBERADO",equipamentosNãoLiberados)
-      })
+  equipamentosNãoLiberados.forEach(equipments => {
+  })
   const equipamentosEmLiberação = equipments.filter(equipments => equipments.situation == "em-liberação")
-      equipamentosNãoLiberados.forEach(equipments => {
-        console.log("EM LIBERAÇÃO",equipamentosEmLiberação)
-      })
+  equipamentosNãoLiberados.forEach(equipments => {
+  })
   const equipamentosReservas = equipments.filter(equipments => equipments.situation == "reserva")
-      equipamentosReservas.forEach(equipments => {
-        console.log("RESERVA",equipamentosReservas)
-      })    
-      
-       async function handleDelete (id){
-        const docRef = doc(db,"Equipamentos",id)
-        await deleteDoc(docRef)
-      }
-     
+  equipamentosReservas.forEach(equipments => {
+  })    
+  const equipamentosProximoDia = equipments.filter(equipments => equipments.situation == "proximo-dia")
+  equipamentosProximoDia.forEach(equipments => { 
+  })    
 
- 
-    
+  let date = new Date()
+  let day = date.getDate() + 1;
+  let month = date.getMonth() + 1;
+
+  let data = day + "/" + month
+
   return (
     <>
       <Container>
@@ -114,7 +115,25 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </BackupOfEquipments>
-          <div ><span id="relogio"></span></div>
+          <BackupOfEquipments>
+            <Title><h1>Prévia do Proximo dia -- {data}</h1></Title>
+            <EquipmentsList >
+              {equipamentosProximoDia.map((item,index) => (
+                 <> 
+                 <div>
+                  <li key={index}>
+                    <p>{item.name}</p>
+                  </li>
+                 {/*  {equipamentosProximoDia.length > 7 ? (
+                     <li key={index}>
+                     <p>{item.name}</p>
+                   </li>
+                  ): (<></>)} */}
+                 </div>
+                 </>
+              ))}
+            </EquipmentsList>
+          </BackupOfEquipments>
         </SectionTwo>
       </Container>
     </>

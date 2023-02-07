@@ -89,9 +89,10 @@ export const AdminPage = () => {
                 <Select name="equipments" id="equipments" value={situation} onChange={(e) => setSituation(e.target.value)}  >
                   <option value="empty">Selecione uma opção</option>
                   <option value="Liberado">Liberado</option>
+                  <option value="em-liberação">Em Liberação</option>
                   <option value="não-liberado">Não Liberado</option>
                   <option value="reserva">Reserva</option>
-                  <option value="em-liberação">Em Liberação</option>
+                  <option value="proximo-dia">Proximo dia</option>
                 </Select>
               </Field>
               <ButtonSection>
