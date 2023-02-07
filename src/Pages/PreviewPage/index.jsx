@@ -124,11 +124,6 @@ export const PreviewPage = () => {
                   <li key={index}>
                     <p>{item.name}</p>
                   </li>
-                 {/*  {equipamentosProximoDia.length > 7 ? (
-                     <li key={index}>
-                     <p>{item.name}</p>
-                   </li>
-                  ): (<></>)} */}
                  </div>
                  </>
               ))}

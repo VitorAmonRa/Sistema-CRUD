@@ -42,8 +42,6 @@ const handleLogin = (e) =>{
     <Container>
       <Form onSubmit={handleLogin}>
         <h1>Faça seu login aqui</h1>
-        <p>teste@teste123.com</p>
-        <p>123123</p>
         <Field>
           <label htmlFor="email"> Email </label>
           <input 
