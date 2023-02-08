@@ -60,24 +60,34 @@ export const InputText = styled.input`
       border: 2px solid black;
     }
 `
-export const Select = styled.select`
-  font-size: 17px;
+export const Select = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size: 19px;
+  margin-top: 10px;
   width:100%;
   height:100vh;
-  max-width: 400px;
+  max-width: 700px;
   max-height: 30px;
-  cursor: pointer;
   font-weight: bold;
-  option{
-    font-weight: bold;
-    background-color:#333638;
-    color:#fff;
-    cursor: pointer;
-  }
-  &:hover{
-      border: 2px solid black;
+  cursor: pointer;
+  div{
+    margin: 20px 0;
+    input{
+      margin: 10px;
+      padding: 5px;
+      background-color:#333638;
+      color:#fff;
       cursor: pointer;
+      &:checked + label{
+            border-color: rgb(51, 122, 183);
+        }
     }
+    label{
+      cursor:pointer;
+    }
+  }
 `
 export const ButtonSection = styled.div`
   display:flex;
