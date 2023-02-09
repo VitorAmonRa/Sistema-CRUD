@@ -7,8 +7,6 @@ import { useEffect } from 'react';
 import { GrUserAdmin } from 'react-icons/gr'
 import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
 import { Burger } from '../../Components/Burger'
-import DatePicker from 'react-date-picker';
-
 
 export const PreviewPage = () => { 
 
@@ -59,11 +57,13 @@ export const PreviewPage = () => {
       <Container>
         <Burger/> 
         <SectionOne>
-          <SituationOfEquipments>
+            {equipamentoLiberado.length > 9 ? (
+            <>
+              <SituationOfEquipments>
             <Title>
               <h1>Liberados</h1>
             </Title>
-            <EquipmentsList >
+            <EquipmentsList>
               {equipamentoLiberado.map((item,index) => (
                  <>  
                   <li key={index}>
@@ -73,34 +73,95 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </SituationOfEquipments>
-          <SituationOfEquipments>
+            </>
+            ) : (
+            <>
+            <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
             <Title>
-              <h1>Em Liberação</h1>
-            </Title>  
+              <h1>Liberados</h1>
+            </Title>
             <EquipmentsList>
-            {equipamentosEmLiberação.map((item,index) => (
-                <>  
-                <li key={index}>
-                  {item.name}
-                 </li>
-                </>
+            {equipamentoLiberado.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
+              ))}
+            </EquipmentsList>
+            </SituationOfEquipments>
+            </>
+            )}
+         {equipamentosEmLiberação.length > 9 ? (
+            <>
+              <SituationOfEquipments>
+            <Title>
+              <h1>Liberados</h1>
+            </Title>
+            <EquipmentsList>
+              {equipamentosEmLiberação.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
               ))}
             </EquipmentsList>
           </SituationOfEquipments>
-          <SituationOfEquipments>
+            </>
+            ) : (
+            <>
+            <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
             <Title>
-              <h1>Não Liberados</h1>
+              <h1>Liberados</h1>
+            </Title>
+            <EquipmentsList>
+            {equipamentosEmLiberação.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
+              ))}
+            </EquipmentsList>
+            </SituationOfEquipments>
+            </>
+            )}
+          {equipamentosNãoLiberados.length > 9 ? (
+            <>
+              <SituationOfEquipments>
+            <Title>
+              <h1>Liberados</h1>
+            </Title>
+            <EquipmentsList>
+              {equipamentosNãoLiberados.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
+              ))}
+            </EquipmentsList>
+          </SituationOfEquipments>
+            </>
+            ) : (
+            <>
+            <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
+            <Title>
+              <h1>Liberados</h1>
             </Title>
             <EquipmentsList>
             {equipamentosNãoLiberados.map((item,index) => (
-              <>
-                <li key={index}>
-                  {item.name}
-                </li>
-              </>
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
               ))}
             </EquipmentsList>
-          </SituationOfEquipments>
+            </SituationOfEquipments>
+            </>
+            )}
         </SectionOne>
         <SectionTwo>
           <BackupOfEquipments>
