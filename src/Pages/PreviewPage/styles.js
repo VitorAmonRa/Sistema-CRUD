@@ -75,7 +75,7 @@ export const BackupOfEquipments = styled.div`
     height: 100vh;
     max-width: 700px;
     max-height: 320px;
-    margin:5% 7%;
+    margin:2% 0 12% 0;
     padding: 5px ;
     background-color:#EBEEFC;
     border: 2px solid #333638;
@@ -95,7 +95,7 @@ export const BackupOfEquipments = styled.div`
     }
     &:nth-child(1){
         width: 100%;
-        max-width: 480px;
+        margin-right: 2%;
     }
     &:nth-child(2){
         div{
