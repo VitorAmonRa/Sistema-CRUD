@@ -96,7 +96,7 @@ export const PreviewPage = () => {
             <>
               <SituationOfEquipments>
             <Title>
-              <h1>Liberados</h1>
+              <h1>Em Liberação</h1>
             </Title>
             <EquipmentsList>
               {equipamentosEmLiberação.map((item,index) => (
@@ -113,7 +113,7 @@ export const PreviewPage = () => {
             <>
             <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
             <Title>
-              <h1>Liberados</h1>
+            <h1>Em Liberação</h1>
             </Title>
             <EquipmentsList>
             {equipamentosEmLiberação.map((item,index) => (
@@ -131,7 +131,7 @@ export const PreviewPage = () => {
             <>
               <SituationOfEquipments>
             <Title>
-              <h1>Liberados</h1>
+              <h1>Não Liberados</h1>
             </Title>
             <EquipmentsList>
               {equipamentosNãoLiberados.map((item,index) => (
@@ -148,7 +148,7 @@ export const PreviewPage = () => {
             <>
             <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
             <Title>
-              <h1>Liberados</h1>
+            <h1>Não Liberados</h1>
             </Title>
             <EquipmentsList>
             {equipamentosNãoLiberados.map((item,index) => (
