@@ -1,10 +1,8 @@
 import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
-import { auth } from '../../services/firebaseConnection';
 import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { GrUserAdmin } from 'react-icons/gr'
 import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
 import { Burger } from '../../Components/Burger'
 
@@ -45,13 +43,6 @@ export const PreviewPage = () => {
   const equipamentosProximoDia = equipments.filter(equipments => equipments.situation == "proximo-dia")
   equipamentosProximoDia.forEach(equipments => { 
   })    
-
-  let date = new Date()
-  let day = date.getDate() + 1;
-  let month = date.getMonth() + 1;
-
-  let data = day + "/" + month
-
   return (
     <>
       <Container>
@@ -177,7 +168,12 @@ export const PreviewPage = () => {
             </EquipmentsList>
           </BackupOfEquipments>
           <BackupOfEquipments>
-            <Title><h1>Prévia do Proximo dia -- {data}</h1></Title>
+            <Title>
+              <h1>Prévia do Proximo dia &rarr; 
+                <textarea name="data" id="data" cols="10" rows="1">
+                </textarea>
+              </h1>
+            </Title>
             <EquipmentsList >
               {equipamentosProximoDia.map((item,index) => (
                  <> 

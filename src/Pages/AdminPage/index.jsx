@@ -27,7 +27,6 @@ import {
 } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
-import { async } from "@firebase/util";
 
 export const AdminPage = () => {
   const [equipments, setEquipments] = useState("");

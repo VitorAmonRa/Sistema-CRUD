@@ -35,11 +35,26 @@ export const SituationOfEquipments = styled.div`
 `
 export const Title = styled.div`
     display:flex;
+    flex-direction:row;
     justify-content:center;
+    align-items:center;
     margin: 2px 0; 
     padding: 5px 0;
     width:100%;
     border-bottom: 2px solid white;
+    textarea{
+        text-align:center;
+        font-size:25px;
+        background-color:transparent;
+        color:#fff;
+        resize: none;
+        margin:5px 5px 0px 20px;
+        border-top: 0;
+        border-left:0;
+        border-right:0;
+        border-bottom:2px solid white;
+        cursor: pointer;
+    }
 `
 export const EquipmentsList = styled.div`
     display:flex;
@@ -76,18 +91,18 @@ export const BackupOfEquipments = styled.div`
     max-width: 700px;
     max-height: 320px;
     margin:2% 0 12% 0;
-    padding: 5px ;
+
     background-color:#EBEEFC;
     border: 2px solid #333638;
-
     li{
         display:flex;
         flex-direction:row;
         justify-content:center;
         width:100%;
+        height:100%;
         padding: 2px 0 ;
-        margin:5px 0;
-        border-bottom: 2px dashed black ;
+        margin:5px 0 0 0;
+        border-bottom: 2px solid black ;
         font-size: 22px;
         p{
             font-weight:bold;
@@ -98,6 +113,9 @@ export const BackupOfEquipments = styled.div`
         margin-right: 2%;
     }
     &:nth-child(2){
+        background-color:transparent;
+        border:none;
+        color:#fff;
         div{
             display:flex;
         }
