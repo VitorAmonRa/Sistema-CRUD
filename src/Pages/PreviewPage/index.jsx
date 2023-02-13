@@ -3,8 +3,10 @@ import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
+import { Image,Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
 import { Burger } from '../../Components/Burger'
+import imagemDois  from '../../Images/imagemDois.jpg'
+import imagemUm  from '../../Images/imagemUm.jpg'
 
 export const PreviewPage = () => { 
 
@@ -29,23 +31,21 @@ export const PreviewPage = () => {
   },[])
   
   const equipamentoLiberado = equipments.filter(equipments => equipments.situation == "Liberado")
-  equipamentoLiberado.forEach(equipments => {
-  })
+
   const equipamentosNãoLiberados = equipments.filter(equipments => equipments.situation == "não-liberado")
-  equipamentosNãoLiberados.forEach(equipments => {
-  })
+  
   const equipamentosEmLiberação = equipments.filter(equipments => equipments.situation == "em-liberação")
-  equipamentosNãoLiberados.forEach(equipments => {
-  })
+ 
   const equipamentosReservas = equipments.filter(equipments => equipments.situation == "reserva")
-  equipamentosReservas.forEach(equipments => {
-  })    
+  
   const equipamentosProximoDia = equipments.filter(equipments => equipments.situation == "proximo-dia")
-  equipamentosProximoDia.forEach(equipments => { 
-  })    
+
+  
   return (
     <>
       <Container>
+    <Image> 
+      <img src={imagemDois} alt="" />
         <Burger/> 
         <SectionOne>
             {equipamentoLiberado.length > 9 ? (
@@ -174,8 +174,8 @@ export const PreviewPage = () => {
                 </textarea>
               </h1>
             </Title>
-            <EquipmentsList >
-              {equipamentosProximoDia.map((item,index) => (
+            <EquipmentsList>
+                {equipamentosProximoDia.map((item,index) => (
                  <> 
                  <div>
                   <li key={index}>
@@ -187,6 +187,7 @@ export const PreviewPage = () => {
             </EquipmentsList>
           </BackupOfEquipments>
         </SectionTwo>
+      </Image>
       </Container>
     </>
   );
