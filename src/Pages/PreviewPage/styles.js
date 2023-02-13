@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const Image = styled.image`
+    width: 100%;
+    height: 100%;
+    img{
+        position:absolute;
+        z-index:100;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.1;
+    }
+`;
 export const Container = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     background-color: #131516;
@@ -22,7 +34,9 @@ export const SituationOfEquipments = styled.div`
     height: 100%;
     max-width: 500px;
     max-height: 100%;
-    background-color:#333638;
+  /*   background-color:#333638; */
+    /* background-color:#1E1F20; */
+    opacity:1;
     color:white;
     border:5px solid green;
     margin:2% 5%;
@@ -91,7 +105,6 @@ export const BackupOfEquipments = styled.div`
     max-width: 700px;
     max-height: 320px;
     margin:2% 0 12% 0;
-
     background-color:#EBEEFC;
     border: 2px solid #333638;
     li{
@@ -102,7 +115,7 @@ export const BackupOfEquipments = styled.div`
         height:100%;
         padding: 2px 0 ;
         margin:5px 0 0 0;
-        border-bottom: 2px solid black ;
+        border-bottom: 2px solid white ;
         font-size: 22px;
         p{
             font-weight:bold;
@@ -111,6 +124,9 @@ export const BackupOfEquipments = styled.div`
     &:nth-child(1){
         width: 100%;
         margin-right: 2%;
+        background-color:transparent;
+        border:none;
+        color:#fff;
     }
     &:nth-child(2){
         background-color:transparent;
