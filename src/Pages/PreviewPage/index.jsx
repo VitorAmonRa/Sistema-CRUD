@@ -3,7 +3,7 @@ import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { Image,Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
+import {Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
 import { Burger } from '../../Components/Burger'
 import imagemDois  from '../../Images/imagemDois.jpg'
 import imagemUm  from '../../Images/imagemUm.jpg'
@@ -43,9 +43,7 @@ export const PreviewPage = () => {
   
   return (
     <>
-      <Container>
-    <Image> 
-      <img src={imagemDois} alt="" />
+    <Container>
         <Burger/> 
         <SectionOne>
             {equipamentoLiberado.length > 9 ? (
@@ -102,7 +100,7 @@ export const PreviewPage = () => {
             </>
             ) : (
             <>
-            <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
+            <SituationOfEquipments style={{ maxHeight: "100%", height: "200px"}}>
             <Title>
             <h1>Em Liberação</h1>
             </Title>
@@ -187,7 +185,6 @@ export const PreviewPage = () => {
             </EquipmentsList>
           </BackupOfEquipments>
         </SectionTwo>
-      </Image>
       </Container>
     </>
   );
