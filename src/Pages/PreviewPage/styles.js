@@ -1,29 +1,23 @@
 import styled from 'styled-components';
+import imagemUm  from '../../Images/imagemUm.jpg'
+import imagemDois  from '../../Images/imagemDois.jpg'
 
-export const Image = styled.div`
-    width: 100%;
-    height: 100%;
-    img{
-        position:absolute;
-        z-index:100;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.1;
-    }
-`;
 export const Container = styled.div`
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(${imagemDois});
+    background-size:cover;
+    background-position: center;
     background-color: #131516;
     width: 100%;
     max-width: 100%;
-    height: 100%;
+    height: 100vh;
 `;
 export const SectionOne = styled.div`
     display:flex;
     justify-content:space-evenly;
     width: 100%;
     max-width: 100%;
+    background-color:rgba(0,0,0,0.84);
 `
 export const SituationOfEquipments = styled.div`
     display: flex;
@@ -34,8 +28,6 @@ export const SituationOfEquipments = styled.div`
     height: 100%;
     max-width: 500px;
     max-height: 100%;
-  /*   background-color:#333638; */
-    /* background-color:#1E1F20; */
     opacity:1;
     color:white;
     border:5px solid green;
@@ -93,7 +85,7 @@ export const SectionTwo = styled.div`
     justify-content:space-around;
     width: 100%;
     max-width: 100%;
-    background-color: #131516;
+    background-color:rgba(0,0,0,0.84);
 `
 
 export const BackupOfEquipments = styled.div`
