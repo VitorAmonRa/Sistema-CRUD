@@ -55,6 +55,7 @@ export const InputText = styled.input`
   max-width: 400px;
   height: 30px;
   padding: 10px;
+  word-wrap: break-word;
   cursor: pointer;
   &:hover{
       border: 2px solid black;
