@@ -91,6 +91,9 @@ export const AdminPage = () => {
           <Form onSubmit={handleSubmit}>
             <Field>
               <Label>Equipamentos</Label>
+              {equipments.length < 45 
+              ? 
+              (<>
               <InputText
                 type="text"
                 name="equipments"
@@ -99,6 +102,25 @@ export const AdminPage = () => {
                 onChange={(e) => setEquipments(e.target.value)}
                 required
               />
+              </>) 
+              : 
+              (<>
+              <InputText
+                type="text"
+                name="equipments"
+                id="equipments"
+                value={equipments}
+                onChange={(e) => setEquipments(e.target.value)}
+                required
+                style={{
+                height: "100vh", 
+                maxHeight: "40px",
+                width:"100%",
+                maxWidth:"80%"
+              }}
+              />
+              
+              </>)}
             </Field>
             <Field>
               <Label>Situação</Label>
