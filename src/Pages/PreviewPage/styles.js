@@ -2,42 +2,41 @@ import styled from 'styled-components';
 import imagemUm  from '../../Images/imagemUm.jpg'
 import imagemDois  from '../../Images/imagemDois.jpg'
 
-export const Container = styled.div`
+export const Image = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(${imagemDois});
     background-size:cover;
     background-position: center;
     background-color: #131516;
+`;
+export const Main = styled.div`
+    display:flex;
     width: 100%;
     max-width: 100%;
-    height: 100vh;
-`;
+    height:100vh;
+    background-color:rgba(0,0,0,0.84);
+`
 export const SectionOne = styled.div`
     display:flex;
+    flex-direction:row;
     justify-content:space-evenly;
     width: 100%;
     max-width: 100%;
-    background-color:rgba(0,0,0,0.84);
 `
 export const SituationOfEquipments = styled.div`
     display: flex;
     flex-direction:column;
-    justify-content: space-between;
     align-items:center;
-    width: 50%;
-    height: 100%;
+    width: 100%;
     max-width: 500px;
-    max-height: 100%;
+    height:min-content;
     opacity:1;
     color:white;
-    border:5px solid green;
-    margin:2% 5%;
-    &:nth-child(2){
-        border:5px solid yellow;
-    }
-    &:nth-child(3){
-        border:5px solid red;
-    }
+    border:5px solid;
+    margin:2%;
 `
 export const Title = styled.div`
     display:flex;
@@ -67,60 +66,55 @@ export const EquipmentsList = styled.div`
     flex-direction:column;
     font-size:20px;
     width:100%;
-    height:100%;
     li{
         display:flex;
         flex-direction:row;
         justify-content:start;
         padding: 0 10px;
         width:100%;
-        margin:5px 0;
+        margin:10px 0;
         border-bottom: 1px dashed rgba(255,255,255,0.2);
         font-size: 22px;
     }
 `
 export const SectionTwo = styled.div`
     display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:space-around;
     width: 100%;
     max-width: 100%;
-    background-color:rgba(0,0,0,0.84);
+    height:100%;
 `
-
 export const BackupOfEquipments = styled.div`
     display: flex;
     flex-direction:column;
     justify-content:center;
     width: 100%;
     height: 100vh;
-    max-width: 700px;
-    max-height: 320px;
-    margin:2% 0 12% 0;
-    background-color:#EBEEFC;
-    border: 2px solid #333638;
+    max-height: 450px;
+    color:#fff;
+    margin:-5% 0 15% 0;
     li{
         display:flex;
         flex-direction:row;
-        justify-content:center;
+        justify-content:start;
         width:100%;
         height:100%;
         padding: 2px 0 ;
         margin:5px 0 0 0;
-        border-bottom: 2px solid white ;
+        border-bottom: 2px dashed rgba(255,255,255,0.2) ;
         font-size: 22px;
         p{
             font-weight:bold;
         }
     }
-    &:nth-child(1){
-        width: 100%;
-        margin-right: 2%;
-        background-color:transparent;
-        border:none;
-        color:#fff;
-    }
     &:nth-child(2){
+        max-width:500px;
+        width:100%;
+    }
+    &:nth-child(3){
+        height:100%;
+        max-height:450px;
         background-color:transparent;
         border:none;
         color:#fff;
@@ -145,6 +139,14 @@ export const ResetButton = styled.button`
     max-width: 300px;
     max-height: 40px;
   cursor: pointer;
+`
+export const SectionThree = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    width: 100%;
+    max-width: 100%;
+    height:100%;
 `
 
 

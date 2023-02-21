@@ -3,7 +3,7 @@ import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import {Container, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList} from './styles';
+import {Image, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,SectionThree,Main} from './styles';
 import { Burger } from '../../Components/Burger'
 import imagemDois  from '../../Images/imagemDois.jpg'
 import imagemUm  from '../../Images/imagemUm.jpg'
@@ -43,12 +43,16 @@ export const PreviewPage = () => {
   
   return (
     <>
-    <Container>
+    <Image>
+      <Main> 
         <Burger/> 
+
         <SectionOne>
-            {equipamentoLiberado.length > 9 ? (
+            {equipamentoLiberado.length > 7 ? (
             <>
-              <SituationOfEquipments>
+              <SituationOfEquipments style={{
+                borderColor:"green"
+              }}>
             <Title>
               <h1>Liberados</h1>
             </Title>
@@ -65,7 +69,12 @@ export const PreviewPage = () => {
             </>
             ) : (
             <>
-            <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
+            <SituationOfEquipments 
+            style={{ 
+              maxHeight: "100%", 
+              height: "400px",
+              borderColor:"green"
+              }}>
             <Title>
               <h1>Liberados</h1>
             </Title>
@@ -81,9 +90,15 @@ export const PreviewPage = () => {
             </SituationOfEquipments>
             </>
             )}
-         {equipamentosEmLiberação.length > 9 ? (
+        </SectionOne>
+
+        <SectionTwo>
+        {equipamentosEmLiberação.length > 3 ? (
             <>
-              <SituationOfEquipments>
+              <SituationOfEquipments 
+              style={{
+                borderColor:"yellow"
+              }}>
             <Title>
               <h1>Em Liberação</h1>
             </Title>
@@ -100,7 +115,11 @@ export const PreviewPage = () => {
             </>
             ) : (
             <>
-            <SituationOfEquipments style={{ maxHeight: "100%", height: "200px"}}>
+            <SituationOfEquipments style={{ 
+              maxHeight: "100%", 
+              height: "200px",
+              borderColor:"yellow"
+              }}>
             <Title>
             <h1>Em Liberação</h1>
             </Title>
@@ -116,44 +135,8 @@ export const PreviewPage = () => {
             </SituationOfEquipments>
             </>
             )}
-          {equipamentosNãoLiberados.length > 9 ? (
-            <>
-              <SituationOfEquipments>
-            <Title>
-              <h1>Não Liberados</h1>
-            </Title>
-            <EquipmentsList>
-              {equipamentosNãoLiberados.map((item,index) => (
-                 <>  
-                  <li key={index}>
-                    {item.name}
-                  </li>
-                 </>
-              ))}
-            </EquipmentsList>
-          </SituationOfEquipments>
-            </>
-            ) : (
-            <>
-            <SituationOfEquipments style={{ maxHeight: "100%", height: "400px"}}>
-            <Title>
-            <h1>Não Liberados</h1>
-            </Title>
-            <EquipmentsList>
-            {equipamentosNãoLiberados.map((item,index) => (
-                 <>  
-                  <li key={index}>
-                    {item.name}
-                  </li>
-                 </>
-              ))}
-            </EquipmentsList>
-            </SituationOfEquipments>
-            </>
-            )}
-        </SectionOne>
-        <SectionTwo>
-          <BackupOfEquipments>
+            
+           <BackupOfEquipments>
             <Title><h1>Spreader's Reservas</h1></Title>
             <EquipmentsList >
               {equipamentosReservas.map((item,index) => (
@@ -164,8 +147,9 @@ export const PreviewPage = () => {
                  </>
               ))}
             </EquipmentsList>
-          </BackupOfEquipments>
-          <BackupOfEquipments>
+          </BackupOfEquipments> 
+
+           <BackupOfEquipments>
             <Title>
               <h1>Prévia do Proximo dia &rarr; 
                 <textarea name="data" id="data" cols="10" rows="1">
@@ -183,9 +167,54 @@ export const PreviewPage = () => {
                  </>
               ))}
             </EquipmentsList>
-          </BackupOfEquipments>
+          </BackupOfEquipments> 
         </SectionTwo>
-      </Container>
+
+        <SectionThree>
+        {equipamentosNãoLiberados.length > 7 ? (
+            <>
+              <SituationOfEquipments style={{
+                borderColor:"red"
+              }}>
+            <Title>
+              <h1>Não Liberados</h1>
+            </Title>
+            <EquipmentsList>
+              {equipamentosNãoLiberados.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
+              ))}
+            </EquipmentsList>
+          </SituationOfEquipments>
+            </>
+            ) : (
+            <>
+            <SituationOfEquipments style={{ 
+              maxHeight: "100%", 
+              height: "400px",
+              borderColor:"red"
+              }}>
+            <Title>
+            <h1>Não Liberados</h1>
+            </Title>
+            <EquipmentsList>
+            {equipamentosNãoLiberados.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
+              ))}
+            </EquipmentsList>
+            </SituationOfEquipments>
+            </>
+            )}
+        </SectionThree>
+        </Main>
+      </Image>
     </>
   );
 
