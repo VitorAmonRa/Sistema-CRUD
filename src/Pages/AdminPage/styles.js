@@ -69,12 +69,12 @@ export const Select = styled.div`
   margin-top: 10px;
   width:100%;
   height:100vh;
-  max-width: 700px;
+  max-width: 750px;
   max-height: 30px;
   font-weight: bold;
   cursor: pointer;
   div{
-    margin: 20px 0;
+    margin: 20px 5px;
     input{
       margin: 10px;
       padding: 5px;

@@ -73,7 +73,7 @@ export const AdminPage = () => {
     })
       .then(() => {
         setEquipments("");
-        setSituation("");
+        /* setSituation(""); */
         console.log("Equipamento registrado");
       })
       .catch((error) => {
