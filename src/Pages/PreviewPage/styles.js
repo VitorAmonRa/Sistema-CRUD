@@ -34,6 +34,7 @@ export const SituationOfEquipments = styled.div`
     max-width: 500px;
     height:min-content;
     opacity:1;
+    background-color:rgba(0, 0, 0,0.4);
     color:white;
     border:5px solid;
     margin:2%;
