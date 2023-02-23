@@ -73,8 +73,7 @@ export const AdminPage = () => {
     })
       .then(() => {
         setEquipments("");
-        /* setSituation(""); */
-        console.log("Equipamento registrado");
+        toast.success("Equipamento registrado ")
       })
       .catch((error) => {
         console.log("Erro ao cadatrar" + error);
