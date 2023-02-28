@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   max-width: 100%;
@@ -126,46 +126,57 @@ export const ModalSection = styled.section`
   margin: 18px 0;
   border: 2px solid black;
   border-radius: 5px;
-  background-color:#A0C1D1;
-`
-export const ModalDiv = styled.div`
-  width:100%;
-  height: 100vh;
-  max-height: 200px;
-  color:#fff;
-  overflow-y: scroll;
-  ::-webkit-scrollbar-thumb{
-      background-color: #A0C1D1;
-      border: 2px solid black;
-      cursor:pointer;
+  background-color: black;
+  .modal-div{
+    width:100%;
+    height: 100vh;
+    max-height: 200px;
+    color:#fff;
+    overflow-y: scroll;
+    ::-webkit-scrollbar-thumb{
+        background-color: #A0C1D1;
+        border: 2px solid black;
+        cursor:pointer;
+      }
+      ::-webkit-scrollbar{
+        border: 2px solid black;
+        background-color:#fff;
+        color:black;
+        cursor:pointer;
+      }
+      div{
+      display: flex;
+      justify-content: space-between;
+      align-items:center;
+      background-color:grey;
+      padding: 10px 0;
+      margin: 10px;
+      border: 4px solid black;
+      p{
+        font-size: 18px;
+        padding: 0 10px;
+      }
+      button{
+        font-weight:bold;
+        border:2px solid black;
+        padding:6px;
+        cursor: pointer;
+        padding: 5px;
+        margin: 0 8px;
+      }
     }
-    ::-webkit-scrollbar{
-      border: 2px solid black;
-      background-color:#fff;
-      color:black;
-      cursor:pointer;
+  }:hover{
+    max-height:700px;
+    max-width:1000px;
+    position:absolute;
+    transition: linear;
+    .modal-div{
+      max-height:90vh;
+      transition: max-height 1s linear;
+      button{
+        padding:5px 20px;
+      }
     }
-  div{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    background-color:grey;
-    padding: 10px 0;
-    margin: 10px;
-    border: 2px solid black;
-    p{
-      font-size: 18px;
-      padding: 0 10px;
-    }
-    button{
-      font-weight:bold;
-      border:2px solid black;
-      padding:6px;
-      cursor: pointer;
-      padding: 5px;
-      margin: 0 8px;
-    }
-   
   }
 `
 

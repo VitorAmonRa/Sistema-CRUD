@@ -11,7 +11,6 @@ import {
   Select,
   ButtonSection,
   ModalSection,
-  ModalDiv,
 } from "./styles";
 import Navbar from "../../Components/Navbar";
 import {
@@ -187,16 +186,30 @@ export const AdminPage = () => {
           </Form>
           {equipmentsModal.length > 0 ? (
             <ModalSection>
-              <ModalDiv>
-                {equipmentsModal.map((item, index) => (
-                  <>
-                    <div key={index}>
-                      <p>{item.name}</p>
-                      <button onClick={() => handleDelete(item.id)}>X</button>
-                    </div>
-                  </>
-                ))}
-              </ModalDiv>
+              <div className="modal-div">
+                {equipmentsModal.map((item, index) => {
+                  const toggleColor = (item) => {
+                    switch(item.situation){
+                      case"Liberado": return "green";
+                      case "em-liberação": return "yellow";
+                      case "não-liberado": return "red";
+                      case "reserva": return "blue";
+                      case "proximo-dia": return "white";
+                    }
+                  }
+                  return(
+                    <>
+                      <div 
+                      key={index}
+                      style={{borderColor: toggleColor(item)}}
+                      >
+                        <p>{item.name}</p>
+                        <button onClick={() => handleDelete(item.id)}>X</button>
+                      </div>
+                    </>
+                  )
+                })}
+              </div>
             </ModalSection>
           ) : (
             <></>
