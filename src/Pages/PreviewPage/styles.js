@@ -48,7 +48,7 @@ export const Title = styled.div`
     padding: 5px 0;
     width:100%;
     border-bottom: 2px solid white;
-    textarea{
+    input{
         text-align:center;
         font-size:25px;
         background-color:transparent;
@@ -58,7 +58,7 @@ export const Title = styled.div`
         border-top: 0;
         border-left:0;
         border-right:0;
-        border-bottom:2px solid white;
+        border-bottom:0;
         cursor: pointer;
     }
 `
