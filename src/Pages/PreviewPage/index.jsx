@@ -152,8 +152,11 @@ export const PreviewPage = () => {
            <BackupOfEquipments>
             <Title>
               <h1>Prévia do Proximo dia &rarr; 
-                <textarea name="data" id="data" cols="10" rows="1">
-                </textarea>
+                <input 
+                type="date" 
+                name="data" 
+                id="data"
+                />
               </h1>
             </Title>
             <EquipmentsList>
