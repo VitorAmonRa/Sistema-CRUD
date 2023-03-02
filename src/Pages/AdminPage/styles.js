@@ -135,7 +135,7 @@ export const ModalSection = styled.section`
     color:#fff;
     overflow-y: scroll;
     ::-webkit-scrollbar-thumb{
-        background-color: #A0C1D1;
+        background-color: red;
         border: 2px solid black;
         cursor:pointer;
       }
