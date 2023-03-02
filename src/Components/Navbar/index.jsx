@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { ContainerNav, MainDiv, Title, DivNav, Button } from "./styles";
-import { async } from "@firebase/util";
+import { ContainerNav, MainDiv, Logo, DivNav, Button } from "./styles";
 
 export const Navbar = (data) => {
   const navigate = useNavigate();
@@ -22,9 +21,15 @@ export const Navbar = (data) => {
     <>
       <ContainerNav>
         <MainDiv>
-          <Title>Admin</Title>
+          <Logo/>
           <DivNav>
-            <Button><Link to="PreviewPage" relative="path">Preview</Link></Button>
+            <Button>
+              <Link 
+              to="PreviewPage" 
+              relative="path"
+              >Preview
+              </Link>
+              </Button>
             <Button onClick={handleLogOut}>Logout</Button>
           </DivNav>
         </MainDiv>

@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-image:linear-gradient(to bottom, #000000, #A0C1D1);
+  background-image:linear-gradient(to right, #fff,red, red);
 `;
 
 export const Form = styled.form`
@@ -38,8 +38,10 @@ export const Form = styled.form`
         border: 3px outset  #232C33;
         cursor: pointer;
         :hover{
-          background-color:#A0C1D1;
-          border: 4px  solid  #131313;
+          background-image:linear-gradient(to right, #fff, red);
+          color:#fff;
+          font-weight: bold;
+          border: 4px  solid  black;
         }
       }
     }

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PortonaveLogo from '../../Images/PortonaveLogo.png'
+import Porto from '../../Images/Porto.png'
 
 export const ContainerNav = styled.div`
   width: 100%;
@@ -12,21 +14,28 @@ export const MainDiv = styled.nav`
   justify-content: space-between;
   align-items: center;
   border-bottom: 3px solid black;
-  background-color: #A0C1D1;
+  background-image:linear-gradient(to right, #fff, red);
   padding: 0 0 25px 0;
 `;
 
-export const Title = styled.h1`
-  padding: 10px 0 0 10px;
-  font-size: 25px;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+export const Logo = styled.div`
+  background-image: url(${Porto});
+  background-size:cover;
+  background-position: center;
+  display: flex;
+  width:100%;
+  max-width:300px;
+  height:100vh;
+  max-height:60px;
+  padding:15px;
+  margin:10px 0 0 20px;
 `;
 export const DivNav = styled.div`
   display: flex;
-  height: 70px;
-  padding: 20px;
   text-decoration: none;
+  height:70px;
+  padding: 20px;
+
 `;
 export const Button = styled.button`
   display: flex;
