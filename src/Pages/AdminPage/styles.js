@@ -5,7 +5,7 @@ export const Container = styled.div`
   min-height:100vh;
   width: 100%;
   height: 100vh;
-  background-color: grey;
+  background-color: #D5D5D5;
 `;
 export const ContainerForm = styled.div`
   display:flex;
@@ -82,7 +82,7 @@ export const Select = styled.div`
       color:#fff;
       cursor: pointer;
       &:checked + label{
-            border-color: rgb(51, 122, 183);
+            border-color: red;
         }
     }
     label{
@@ -109,7 +109,8 @@ export const ButtonSection = styled.div`
       border: 2px solid black;
       border-radius: 5px;
     &:hover{
-      background-color:#A0C1D1;
+      background-color:red;
+      color:#fff;
     }
   }
 ` 
@@ -166,6 +167,7 @@ export const ModalSection = styled.section`
       }
     }
   }:hover{
+
     max-height:700px;
     max-width:1000px;
     position:absolute;
