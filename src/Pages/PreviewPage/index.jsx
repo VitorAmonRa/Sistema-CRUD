@@ -39,9 +39,7 @@ export const PreviewPage = () => {
   const equipamentosProximoDia = equipments.filter(equipments => equipments.situation == "proximo-dia")
   
   const equipamentosDateTime = equipments.filter(equipments => equipments.situation == "data")
-  console.log(equipamentosDateTime)
 
-  
   return (
     <>
     <Image>

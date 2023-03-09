@@ -72,7 +72,11 @@ export const AdminPage = () => {
     })
       .then(() => {
         setEquipments("");
-        toast.success("Equipamento registrado ")
+        if (situation == "data"){
+          toast.success("Data registrada com sucesso");
+        }else{
+          toast.success("Equipamento registrado ")
+        }
       })
       .catch((error) => {
         console.log("Erro ao cadatrar" + error);

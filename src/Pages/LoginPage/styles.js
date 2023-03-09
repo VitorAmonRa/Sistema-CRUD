@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-image:linear-gradient(to right, #fff,red, red);
+  background-image:linear-gradient(to right, #fff,#530808, #530808);
 `;
 
 export const Form = styled.form`
@@ -38,7 +38,7 @@ export const Form = styled.form`
         border: 3px outset  #232C33;
         cursor: pointer;
         :hover{
-          background-image:linear-gradient(to right, #fff, red);
+          background-image:linear-gradient(to right, #fff, #530808);
           color:#fff;
           font-weight: bold;
           border: 4px  solid  black;
@@ -65,20 +65,3 @@ export const Field = styled.div`
     padding: 4px 8px;
   }
 `;
-
-export const LoadingPage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  max-height: 100vh;
-  width:100%;
-  height:100vh;
-  background: linear-gradient(to left, #000000, #A0C1D1 );
-  h1{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    color: #fff;
-  }
-`
