@@ -6,8 +6,7 @@ import { toast } from 'react-toastify';
 import { 
   Container,
   Form,
-  Field,
-  LoadingPage
+  Field
 } from './styles';
 
 export const LoginPage = () => {
@@ -25,7 +24,6 @@ const handleLogin = (e) =>{
   signInWithEmailAndPassword(auth, email , password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log(userCredential)
       toast.success("Bem-vindo")
       navigate("/", {replace:true})
     })
