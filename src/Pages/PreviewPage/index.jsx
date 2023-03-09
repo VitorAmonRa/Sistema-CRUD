@@ -5,8 +5,6 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import {Image, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,SectionThree,Main} from './styles';
 import { Burger } from '../../Components/Burger'
-import imagemDois  from '../../Images/imagemDois.jpg'
-import imagemUm  from '../../Images/imagemUm.jpg'
 
 export const PreviewPage = () => { 
 
@@ -39,6 +37,9 @@ export const PreviewPage = () => {
   const equipamentosReservas = equipments.filter(equipments => equipments.situation == "reserva")
   
   const equipamentosProximoDia = equipments.filter(equipments => equipments.situation == "proximo-dia")
+  
+  const equipamentosDateTime = equipments.filter(equipments => equipments.situation == "data")
+  console.log(equipamentosDateTime)
 
   
   return (
@@ -48,8 +49,6 @@ export const PreviewPage = () => {
         <Burger/> 
 
         <SectionOne>
-            {equipamentoLiberado.length > 7 ? (
-            <>
               <SituationOfEquipments style={{
                 borderColor:"green"
               }}>
@@ -66,35 +65,9 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </SituationOfEquipments>
-            </>
-            ) : (
-            <>
-            <SituationOfEquipments 
-            style={{ 
-              maxHeight: "100%", 
-              height: "400px",
-              borderColor:"green"
-              }}>
-            <Title>
-              <h1>Liberados</h1>
-            </Title>
-            <EquipmentsList>
-            {equipamentoLiberado.map((item,index) => (
-                 <>  
-                  <li key={index}>
-                    {item.name}
-                  </li>
-                 </>
-              ))}
-            </EquipmentsList>
-            </SituationOfEquipments>
-            </>
-            )}
         </SectionOne>
 
         <SectionTwo>
-        {equipamentosEmLiberação.length > 3 ? (
-            <>
               <SituationOfEquipments 
               style={{
                 borderColor:"yellow"
@@ -112,32 +85,11 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </SituationOfEquipments>
-            </>
-            ) : (
-            <>
-            <SituationOfEquipments style={{ 
-              maxHeight: "100%", 
-              height: "200px",
-              borderColor:"yellow"
-              }}>
-            <Title>
-            <h1>Em Liberação</h1>
-            </Title>
-            <EquipmentsList>
-            {equipamentosEmLiberação.map((item,index) => (
-                 <>  
-                  <li key={index}>
-                    {item.name}
-                  </li>
-                 </>
-              ))}
-            </EquipmentsList>
-            </SituationOfEquipments>
-            </>
-            )}
-            
+           
            <BackupOfEquipments>
-            <Title><h1>Spreader's Reservas</h1></Title>
+            <Title>
+              <h1>Spreader's Reservas</h1>
+              </Title>
             <EquipmentsList >
               {equipamentosReservas.map((item,index) => (
                  <>  
@@ -151,13 +103,14 @@ export const PreviewPage = () => {
 
            <BackupOfEquipments>
             <Title>
-              <h1>Prévia do Proximo dia &rarr; 
-                <input 
-                type="date" 
-                name="data" 
-                id="data"
-                />
-              </h1>
+              <h1>Prévia do Proximo dia &rarr; </h1>
+              {equipamentosDateTime.map((item,index) => (
+                 <> 
+                 <div key={index}>
+                    <p>{item.name}</p>
+                 </div>
+                 </>
+              ))}
             </Title>
             <EquipmentsList>
                 {equipamentosProximoDia.map((item,index) => (
@@ -174,8 +127,6 @@ export const PreviewPage = () => {
         </SectionTwo>
 
         <SectionThree>
-        {equipamentosNãoLiberados.length > 7 ? (
-            <>
               <SituationOfEquipments style={{
                 borderColor:"red"
               }}>
@@ -192,29 +143,6 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </SituationOfEquipments>
-            </>
-            ) : (
-            <>
-            <SituationOfEquipments style={{ 
-              maxHeight: "100%", 
-              height: "400px",
-              borderColor:"red"
-              }}>
-            <Title>
-            <h1>Não Liberados</h1>
-            </Title>
-            <EquipmentsList>
-            {equipamentosNãoLiberados.map((item,index) => (
-                 <>  
-                  <li key={index}>
-                    {item.name}
-                  </li>
-                 </>
-              ))}
-            </EquipmentsList>
-            </SituationOfEquipments>
-            </>
-            )}
         </SectionThree>
         </Main>
       </Image>

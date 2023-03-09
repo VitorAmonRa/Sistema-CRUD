@@ -38,6 +38,7 @@ export const SituationOfEquipments = styled.div`
     color:white;
     border:5px solid;
     margin:2%;
+    padding-bottom:20px;
 `
 export const Title = styled.div`
     display:flex;
@@ -48,18 +49,9 @@ export const Title = styled.div`
     padding: 5px 0;
     width:100%;
     border-bottom: 2px solid white;
-    input{
-        text-align:center;
+    p{
         font-size:25px;
-        background-color:transparent;
-        color:#fff;
-        resize: none;
-        margin:5px 5px 0px 20px;
-        border-top: 0;
-        border-left:0;
-        border-right:0;
-        border-bottom:0;
-        cursor: pointer;
+        padding:5px 15px;
     }
 `
 export const EquipmentsList = styled.div`

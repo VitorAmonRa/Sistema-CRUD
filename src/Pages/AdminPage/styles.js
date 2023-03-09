@@ -27,7 +27,7 @@ export const ContainerForm = styled.div`
 export const Form = styled.form`
     display:flex;
     flex-direction: column;
-    max-width:800px;
+    max-width:900px;
     max-height:600px;
     padding: 20px 0 ;
     width:100%;
@@ -69,7 +69,7 @@ export const Select = styled.div`
   margin-top: 10px;
   width:100%;
   height:100vh;
-  max-width: 750px;
+  max-width: 900px;
   max-height: 30px;
   font-weight: bold;
   cursor: pointer;
@@ -92,7 +92,7 @@ export const Select = styled.div`
 `
 export const ButtonSection = styled.div`
   display:flex;
-  justify-content:space-evenly;
+  justify-content:space-around;
     button{
       display:flex;
       justify-content:center;

@@ -178,11 +178,22 @@ export const AdminPage = () => {
                   />
                   <label htmlFor="5">Proximo Dia</label>
                 </div>
+                <div className="radio">
+                  <input
+                    type="radio"
+                    value="data"
+                    id="6"
+                    checked={situation === "data"}
+                    onChange={(e) => setSituation(e.target.value)}
+                  />
+                  <label htmlFor="6">Data</label>
+                </div>
               </Select>
             </Field>
             <ButtonSection>
               <button type="submit">Enviar</button>
             </ButtonSection>
+            
           </Form>
           {equipmentsModal.length > 0 ? (
             <ModalSection>
