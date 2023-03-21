@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <Global/>
-    <ToastContainer autoClose={1500}/>
+    <ToastContainer autoClose={1500} limit={4} />
       <Router>
         <Routes>
           <Route path="PreviewPage" element={ <PreviewPage/> }/>
