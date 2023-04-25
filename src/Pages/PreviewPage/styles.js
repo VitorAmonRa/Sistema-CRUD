@@ -68,6 +68,7 @@ export const EquipmentsList = styled.div`
         margin:10px 0;
         border-bottom: 1px dashed rgba(255,255,255,0.2);
         font-size: 22px;
+        font-weight:bold;
     }
 `
 export const SectionTwo = styled.div`
@@ -119,6 +120,7 @@ export const BackupOfEquipments = styled.div`
             justify-content:start;
             padding: 0 5px;
             border-bottom: none;
+            font-weight:bold;
         }
     }
 ` 
