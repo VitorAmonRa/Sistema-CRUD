@@ -9,6 +9,7 @@ export const IconDiv = styled.div`
     max-height:50px;
     width:100%;
     height:100%;
+    
     button{
         display:flex;
         justify-content:center;
@@ -20,4 +21,9 @@ export const IconDiv = styled.div`
         height:100%;
         cursor:pointer;
     }
+    @media (max-width: 1024px) {
+    width:auto;
+    height:auto;
+    button{font-size:267x;}
+}
 `
