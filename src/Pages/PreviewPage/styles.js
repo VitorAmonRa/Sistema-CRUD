@@ -89,7 +89,7 @@ export const EquipmentsList = styled.div`
     font-size: 22px;
     font-weight: bold;
   }
-  @media (max-width:1440px) {
+  @media (min-width: 1440px) and (max-width:1920px) {
       li{font-size:18px;}
   
   }
