@@ -6,6 +6,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #D5D5D5;
+  
 `;
 export const ContainerForm = styled.div`
   display:flex;
@@ -22,6 +23,10 @@ export const ContainerForm = styled.div`
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
+  @media (max-width:1920px) {
+      max-width:900px;
+  
+  }
 
 `;
 export const Form = styled.form`
@@ -32,6 +37,10 @@ export const Form = styled.form`
     padding: 20px 0 ;
     width:100%;
     height:100vh;
+  @media (max-width:1920px) {
+    max-width:800px;
+  
+  }
 `;
 export const Field = styled.div`
     display:flex;
@@ -47,6 +56,9 @@ export const Label = styled.label`
   font-size: 22px;
   font-weight: bold;
   padding: 5px;
+  @media (max-width:1920px) {
+    font-size: 20px;
+  }
 `;
 export const InputText = styled.input` 
   font-size: 15px;
@@ -60,6 +72,9 @@ export const InputText = styled.input`
   &:hover{
       border: 2px solid black;
     }
+  @media (max-width:1920px) {
+    height: 20px;
+  }
 `
 export const Select = styled.div`
   display:flex;
@@ -89,6 +104,9 @@ export const Select = styled.div`
       cursor:pointer;
     }
   }
+  @media (max-width:1920px) {
+    font-size: 17px;
+  }
 `
 export const ButtonSection = styled.div`
   display:flex;
@@ -111,6 +129,13 @@ export const ButtonSection = styled.div`
     &:hover{
       background-color:red;
       color:#fff;
+    }
+  }
+  @media (max-width:1920px) {
+    button{
+      max-width: 150px;
+      padding: 15px;
+      font-size: 15px;
     }
   }
 ` 
@@ -179,6 +204,9 @@ export const ModalSection = styled.section`
         padding:5px 20px;
       }
     }
+  }
+  @media (max-width:1920px) {
+    max-width:700px;
   }
 `
 

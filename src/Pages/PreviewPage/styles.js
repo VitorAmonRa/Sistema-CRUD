@@ -16,8 +16,10 @@ export const Main = styled.div`
   display: flex;
   width: 100%;
   max-width: 100%;
-  height: 100vh;
   background-color: rgba(0, 0, 0, 0.84);
+  @media (min-width:1024px) {
+    height: 100vh;
+  }
 
 `;
 export const SectionOne = styled.div`
@@ -42,15 +44,13 @@ export const SituationOfEquipments = styled.div`
   padding-bottom: 20px;
   @media (max-width:1840px) {
       max-width:440px;
-  
   }
   @media (max-width:1440px) {
-      max-width:320px;
-  
+      max-width:320px; 
   }
-  @media (max-width: 1024px) {
-    max-width:200px;
-}
+  @media (min-width: 1024px) and (max-width: 1281px){
+    max-width:250px;
+  }
 `;
 export const Title = styled.div`
   display: flex;
@@ -64,16 +64,12 @@ export const Title = styled.div`
   @media (max-width:1440px) {
         h1{font-size: 28px;}
 }
-@media (max-width: 1024px) {
-    h1{font-size: 20px;}
-}
+  @media (min-width: 1024px) and (max-width: 1281px) {
+      h1{font-size: 20px;}
+  }
   p {
     font-size: 25px;
     padding: 5px 15px;
-    @media (max-width:1440px) {
-        font-size: 15px;
-}
-
   }
 `;
 export const EquipmentsList = styled.div`
@@ -81,6 +77,7 @@ export const EquipmentsList = styled.div`
   flex-direction: column;
   font-size: 20px;
   width: 100%;
+  
   li {
     display: flex;
     flex-direction: row;
@@ -96,7 +93,7 @@ export const EquipmentsList = styled.div`
       li{font-size:18px;}
   
   }
-  @media (max-width: 1024px) {
+  @media (min-width: 1024px) and (max-width: 1281px) {
     li{font-size: 15px;}
 }
 `;
@@ -116,8 +113,6 @@ export const BackupOfEquipments = styled.div`
   height: 100vh;
   max-height: 450px;
   color: #fff;
-  margin: -5% 0 15% 0;
-
   li {
     display: flex;
     flex-direction: row;
@@ -128,24 +123,32 @@ export const BackupOfEquipments = styled.div`
     margin: 5px 0 0 0;
     border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
     font-size: 22px;
-    
     p {
       font-weight: bold;
-      @media (max-width:1440px) {
-      font-size:18px;
-  
+      @media (min-width:1281px) {
+      font-size:16px; 
   }
-    }
-    
+    }  
   }
   &:nth-child(2) {
     max-width: 500px;
-    width: 100%;
+    max-height:380px;
+    @media (max-width: 1440px) {
+      max-height:280px;
+      p{
+        font-size:16px;
+      }
+      @media (min-width: 1024px) and (max-width: 1281px) {
+        max-height:190px;
+        p{
+        font-size:14px; 
+      }
+  }
+}
   }
   &:nth-child(3) {
     height: 100%;
     max-height: 450px;
-    background-color: transparent;
     border: none;
     color: #fff;
     div {
@@ -157,6 +160,14 @@ export const BackupOfEquipments = styled.div`
       padding: 0 5px;
       border-bottom: none;
       font-weight: bold;
+    }
+    p{
+      @media (max-width:1440px) {
+          font-size:18px; 
+      }
+      @media (min-width: 1024px) and (max-width: 1281px) {
+      font-size:15px; 
+  }
     }
   }
 `;

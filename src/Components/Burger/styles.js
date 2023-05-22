@@ -21,9 +21,18 @@ export const IconDiv = styled.div`
         height:100%;
         cursor:pointer;
     }
+    @media (max-width: 1281px) {
+        width:auto;
+        height:auto;
+        button{
+            font-size:22px;
+        }
+  }
     @media (max-width: 1024px) {
-    width:auto;
-    height:auto;
-    button{font-size:267x;}
-}
+        width:auto;
+        height:auto;
+        button{
+            font-size:26px;
+        }
+    }
 `
