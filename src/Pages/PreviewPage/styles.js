@@ -125,15 +125,12 @@ export const BackupOfEquipments = styled.div`
     font-size: 22px;
     p {
       font-weight: bold;
-      @media (min-width:1281px) {
-      font-size:16px; 
-  }
     }  
   }
   &:nth-child(2) {
     max-width: 500px;
     max-height:380px;
-    @media (max-width: 1440px) {
+    @media (min-width: 1440px) and (max-width:1920px) {
       max-height:280px;
       p{
         font-size:16px;
@@ -162,8 +159,8 @@ export const BackupOfEquipments = styled.div`
       font-weight: bold;
     }
     p{
-      @media (max-width:1440px) {
-          font-size:18px; 
+      @media (min-width: 1440px) and (max-width:1920px) {
+          font-size:16px; 
       }
       @media (min-width: 1024px) and (max-width: 1281px) {
       font-size:15px; 
