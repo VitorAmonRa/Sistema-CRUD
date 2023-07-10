@@ -8,6 +8,20 @@ export const Container = styled.div`
   background-color: #D5D5D5;
   
 `;
+export const ButtonEmail = styled.span`
+  display:flex;
+  flex-direction: column;
+  position:relative;
+  justify-content:center;
+  align-items:center;
+  width: 100%;
+  max-width: 100px;
+  height:100vh;
+  max-height:50px;
+  top: 5rem;
+  left: 50%;
+  transform:translate(-50%,-50%);
+`;
 export const ContainerForm = styled.div`
   display:flex;
   flex-direction: column;
@@ -20,7 +34,7 @@ export const ContainerForm = styled.div`
   max-height:700px;
   border: 3px solid black;
   border-radius: 10px;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform:translate(-50%,-50%);
   @media (max-width:1920px) {
@@ -209,4 +223,45 @@ export const ModalSection = styled.section`
     max-width:700px;
   }
 `
+export const LabelChecked = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+`;
 
+export const Switch = styled.div`
+position: relative;
+width: 60px;
+height: 32px;
+background: #b3b3b3;
+border-radius: 32px;
+transition: 300ms all;
+&:before {
+    transition: 300ms all;
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 35px;
+  top: 50%;
+  left: 4px;
+  background: white;
+  transform: translate(0, -50%);
+}
+`;
+
+export const InputChecked = styled.input`
+  display: none;
+  opacity: 0;
+  position: absolute;
+  &:checked + ${Switch} {
+    background: green;
+    
+    &:before {
+      transform: translate(32px, -50%);
+    }
+  }
+`;
