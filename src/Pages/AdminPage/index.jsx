@@ -32,8 +32,8 @@ import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
 import { Button } from "../../Components/Navbar/styles";
 
-export const AdminPage = ({handleChecked}) => {
-  const [change, setChange] = useState(false);  
+export const AdminPage = () => {
+  const [change, setChange] = useState(true);  
   const [equipments, setEquipments] = useState("");
   const [situation, setSituation] = useState({});
   const [equipmentsModal, setEquipmentsModal] = useState([]);
