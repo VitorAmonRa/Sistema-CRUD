@@ -11,6 +11,10 @@ import {
   Select,
   ButtonSection,
   ModalSection,
+  ButtonEmail,
+  LabelChecked, 
+  InputChecked, 
+  Switch,
 } from "./styles";
 import Navbar from "../../Components/Navbar";
 import {
@@ -26,8 +30,10 @@ import {
 } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
+import { Button } from "../../Components/Navbar/styles";
 
-export const AdminPage = () => {
+export const AdminPage = ({handleChecked}) => {
+  const [change, setChange] = useState(false);  
   const [equipments, setEquipments] = useState("");
   const [situation, setSituation] = useState({});
   const [equipmentsModal, setEquipmentsModal] = useState([]);
@@ -54,6 +60,10 @@ export const AdminPage = () => {
     const docRef = doc(db, "Equipamentos", id);
     toast.success("Equipamento deletado com sucesso");
     await deleteDoc(docRef);
+  }
+
+  const handleChange = () =>{
+    setChange(change => !change)
   }
 
   const handleSubmit = (e) => {
@@ -89,6 +99,16 @@ export const AdminPage = () => {
       <Global />
       <Container>
         <Navbar />
+        <LabelChecked>
+          <span> Selecionado {change ? 'Equipamentos' : 'Email'}</span>
+          <InputChecked 
+          change={change} 
+          type='checkbox' 
+          onChange={handleChange}
+          />
+          <Switch />
+      </LabelChecked>
+        { change == true ? 
         <ContainerForm>
           <Form onSubmit={handleSubmit}>
             <Field>
@@ -229,7 +249,11 @@ export const AdminPage = () => {
           ) : (
             <></>
           )}
-        </ContainerForm>
+        </ContainerForm> 
+        : <ContainerForm>Building...</ContainerForm>
+        }
+          
+       
       </Container>
     </>
   );
