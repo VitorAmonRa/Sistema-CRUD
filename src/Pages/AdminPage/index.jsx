@@ -15,6 +15,7 @@ import {
   LabelChecked, 
   InputChecked, 
   Switch,
+  PreviewMessage,
 } from "./styles";
 import Navbar from "../../Components/Navbar";
 import {
@@ -30,13 +31,15 @@ import {
 } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
-import { Button } from "../../Components/Navbar/styles";
+import emailjs from "@emailjs/browser"
 
 export const AdminPage = () => {
   const [change, setChange] = useState(true);  
   const [equipments, setEquipments] = useState("");
   const [situation, setSituation] = useState({});
   const [equipmentsModal, setEquipmentsModal] = useState([]);
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const equipmentsRef = collection(db, "Equipamentos");
@@ -93,6 +96,23 @@ export const AdminPage = () => {
         toast.error("Error");
       });
   };
+  
+  const handleOnSubmit = (e) =>{
+    e.preventDefault();
+    
+    const templateParams = {
+      message : message,
+      email: email,
+    }
+    emailjs.send("service_3hwqh4i", "template_g6tqn45", templateParams, "d4S6gHJJ1vnRY1l1Z")
+    .then((response) => {
+      console.log("Email Enviado")
+      setMessage("")
+      setEmail("")
+    })
+  }
+  const equipamentoLiberado = equipmentsModal.filter(equipments => equipments.situation == "Liberado")
+
 
   return (
     <>
@@ -250,7 +270,36 @@ export const AdminPage = () => {
             <></>
           )}
         </ContainerForm> 
-        : <ContainerForm>Building...</ContainerForm>
+        : <ContainerForm>
+          <Form onSubmit={handleOnSubmit}>
+            <Field>
+              <Label>Email</Label>
+              <InputText
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </Field>
+            <Field>
+              <Label>Mensagem</Label> 
+              <PreviewMessage>
+                <InputText
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                />
+{/*                 <p>
+                  {equipamentoLiberado.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
+              ))}</p> */}
+              </PreviewMessage>
+            </Field>
+          </Form>
+        </ContainerForm>
         }
           
        
