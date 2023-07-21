@@ -32,6 +32,7 @@ import {
 import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser"
+import { saveAs } from 'file-saver';
 
 export const AdminPage = () => {
   const [change, setChange] = useState(true);  
@@ -111,8 +112,20 @@ export const AdminPage = () => {
       setEmail("")
     })
   }
+
   const equipamentoLiberado = equipmentsModal.filter(equipments => equipments.situation == "Liberado")
 
+
+/*   const fileSaver = () => {
+    equipmentsModal.filter((item,index) => {
+      const equipmentsModalName = item.name
+      const stringFy = JSON.stringify(equipmentsModalName)
+
+    })
+    var blob = new Blob([stringFy], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "hello world.txt");
+    console.log("ALO",stringFy)
+  } */
 
   return (
     <>
@@ -278,24 +291,25 @@ export const AdminPage = () => {
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled
                 required
+                placeholder="Não funcional, fase de testes"
               />
             </Field>
             <Field>
               <Label>Mensagem</Label> 
               <PreviewMessage>
-                <InputText
-                  onChange={(e) => setMessage(e.target.value)}
-                  value={message}
-                />
-{/*                 <p>
-                  {equipamentoLiberado.map((item,index) => (
-                 <>  
-                  <li key={index}>
-                    {item.name}
-                  </li>
-                 </>
-              ))}</p> */}
+                <InputText 
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
+                placeholder="Não funcional, fase de testes"
+                disabled
+                style={{
+                  height: "100vh", 
+                  maxHeight: "100px",
+                  width:"100%",
+                  maxWidth:"80%"
+                }}/>
               </PreviewMessage>
             </Field>
           </Form>

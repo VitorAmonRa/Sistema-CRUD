@@ -267,6 +267,7 @@ export const InputChecked = styled.input`
 `;
 export const PreviewMessage = styled.div`
   display:flex;
+  justify-content:center;
   height:20vh;
   width:100%;
   max-width:40rem;
