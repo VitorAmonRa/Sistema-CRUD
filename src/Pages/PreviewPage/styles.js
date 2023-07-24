@@ -68,8 +68,14 @@ export const Title = styled.div`
       h1{font-size: 20px;}
   }
   p {
-    font-size: 25px;
+    font-size: 28px;
     padding: 5px 15px;
+  }
+  span{
+    font-size: 18px;
+    margin-left: 20px;
+    background-color: rgba(100,255,100,0.4);
+    padding: 3px;
   }
 `;
 export const EquipmentsList = styled.div`
@@ -125,6 +131,7 @@ export const BackupOfEquipments = styled.div`
     font-size: 22px;
     p {
       font-weight: bold;
+      
     }  
   }
   &:nth-child(2) {
