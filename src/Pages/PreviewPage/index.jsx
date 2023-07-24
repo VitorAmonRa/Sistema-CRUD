@@ -101,11 +101,11 @@ export const PreviewPage = () => {
 
            <BackupOfEquipments>
             <Title>
-              <h1>Prévia do Proximo dia &rarr; </h1>
+              <h1>Programação do Dia &rarr; </h1>
               {equipamentosDateTime.map((item,index) => (
                  <> 
                  <div key={index}>
-                    <p>{item.name}</p>
+                    <span>{item.name}</span>
                  </div>
                  </>
               ))}
