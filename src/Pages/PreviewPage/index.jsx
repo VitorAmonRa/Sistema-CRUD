@@ -122,6 +122,9 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </BackupOfEquipments> 
+          <footer>
+            <p>Developed by Vitor Amon-Rá Fernandes</p>
+        </footer>
         </SectionTwo>
 
         <SectionThree>
@@ -142,6 +145,7 @@ export const PreviewPage = () => {
             </EquipmentsList>
           </SituationOfEquipments>
         </SectionThree>
+       
         </Main>
       </Image>
     </>
