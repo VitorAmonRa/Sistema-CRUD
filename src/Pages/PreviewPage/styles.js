@@ -110,6 +110,16 @@ export const SectionTwo = styled.div`
   width: 100%;
   max-width: 100%;
   height: 100%;
+    footer{
+      padding:0.5rem;
+      border-bottom: 1px solid white;
+      p{
+      color: #fff;
+      font-size:18px;
+      letter-spacing:1px;
+    }
+   
+  }
 `;
 export const BackupOfEquipments = styled.div`
   display: flex;
