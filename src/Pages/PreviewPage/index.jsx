@@ -3,7 +3,7 @@ import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import {Image, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,SectionThree,Main} from './styles';
+import {Image, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,SectionThree,Main, SupportEquipaments} from './styles';
 import { Burger } from '../../Components/Burger'
 
 export const PreviewPage = () => { 
@@ -40,6 +40,8 @@ export const PreviewPage = () => {
   
   const equipamentosDateTime = equipments.filter(equipments => equipments.situation == "data")
 
+  const equipamentosDeApoio = equipments.filter(equipments => equipments.situation == "Apoio")
+
   return (
     <>
     <Image>
@@ -47,7 +49,7 @@ export const PreviewPage = () => {
         <Burger/> 
 
         <SectionOne>
-              <SituationOfEquipments style={{
+          <SituationOfEquipments style={{
                 borderColor:"green"
               }}>
             <Title>
@@ -63,6 +65,22 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </SituationOfEquipments>
+
+          <SupportEquipaments>
+            <Title> 
+              <h1> Equipamentos de Apoio </h1> 
+            </Title>
+            <EquipmentsList>
+              {equipamentosDeApoio.map((item,index) => (
+                 <>  
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                 </>
+              ))}
+            </EquipmentsList>
+
+          </SupportEquipaments>
         </SectionOne>
 
         <SectionTwo>
