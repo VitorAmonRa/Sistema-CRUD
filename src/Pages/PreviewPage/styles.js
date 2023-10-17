@@ -82,7 +82,6 @@ export const EquipmentsList = styled.div`
   flex-direction: column;
   font-size: 20px;
   width: 100%;
-  
   li {
     display: flex;
     flex-direction: row;
@@ -207,10 +206,16 @@ export const SectionThree = styled.div`
 export const SupportEquipaments = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
-  max-width: 500px;
-  height: 100vh;
-  max-height: 450px;
+  max-width: 440px;
+  height: min-content;
+  padding-bottom: 20px;
+  margin-top:1rem;
   color: #fff;
+  border: 5px solid;
+
+ /*  border-left: 5px solid;
+  border-top: 5px solid;
+  border-right:5px solid; */
+  background-color: rgba(0, 0, 0, 0.4);
 `;
