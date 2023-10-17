@@ -24,8 +24,8 @@ export const Main = styled.div`
 `;
 export const SectionOne = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 100%;
 `;
@@ -74,7 +74,6 @@ export const Title = styled.div`
   span{
     font-size: 18px;
     margin-left: 20px;
-    background-color: rgba(100,255,100,0.4);
     padding: 3px;
   }
 `;
@@ -135,6 +134,7 @@ export const BackupOfEquipments = styled.div`
     justify-content: start;
     width: 100%;
     height: 100%;
+    
     padding: 2px 0;
     margin: 5px 0 0 0;
     border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
@@ -203,4 +203,14 @@ export const SectionThree = styled.div`
   width: 100%;
   max-width: 100%;
   height: 100%;
+`;
+export const SupportEquipaments = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  max-height: 450px;
+  color: #fff;
 `;

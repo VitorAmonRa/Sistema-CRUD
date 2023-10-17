@@ -52,7 +52,7 @@ export const Form = styled.form`
     width:100%;
     height:100vh;
   @media (max-width:1920px) {
-    max-width:800px;
+    max-width:850px;
   
   }
 `;
@@ -78,9 +78,9 @@ export const InputText = styled.input`
   font-size: 15px;
   width:100%;
   height:100vh;
-  max-width: 400px;
+  max-width: 500px;
   height: 30px;
-  padding: 10px;
+  padding: 15px;
   word-wrap: break-word;
   cursor: pointer;
   &:hover{
@@ -102,24 +102,30 @@ export const Select = styled.div`
   max-height: 30px;
   font-weight: bold;
   cursor: pointer;
-  div{
-    margin: 20px 5px;
+  div { 
+    display: flex;
+    align-items:center;
+    padding:0px 8px;
     input{
-      margin: 10px;
-      padding: 5px;
-      background-color:#333638;
+      width: 22px;
+      height: 20px;
       color:#fff;
+      background-color:red;
       cursor: pointer;
+      .check1{
+        background-color:red;
+      }
       &:checked + label{
             border-color: red;
         }
+    
     }
     label{
       cursor:pointer;
     }
   }
   @media (max-width:1920px) {
-    font-size: 17px;
+    font-size: 18px;
   }
 `
 export const ButtonSection = styled.div`
