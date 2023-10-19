@@ -62,7 +62,7 @@ export const Title = styled.div`
   width: 100%;
   border-bottom: 2px solid white;
   &:nth-child(2){
-    h1{ font-size:16px;}
+    font-size:16px;
   }
   
   @media (max-width:1440px) {
