@@ -207,15 +207,15 @@ export const SupportEquipaments = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   height: min-content;
   padding-bottom: 20px;
   margin-top:1rem;
   color: #fff;
   border: 5px solid;
-
- /*  border-left: 5px solid;
-  border-top: 5px solid;
-  border-right:5px solid; */
   background-color: rgba(0, 0, 0, 0.4);
+  
+   @media (max-width:1840px) {
+      max-width:440px;
+  }
 `;
