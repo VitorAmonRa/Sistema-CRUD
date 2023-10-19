@@ -62,7 +62,7 @@ export const Title = styled.div`
   width: 100%;
   border-bottom: 2px solid white;
   @media (max-width:1440px) {
-        h1{font-size: 28px;}
+      h1{font-size: 28px;}
 }
   @media (min-width: 1024px) and (max-width: 1281px) {
       h1{font-size: 20px;}
@@ -72,7 +72,7 @@ export const Title = styled.div`
     padding: 5px 15px;
   }
   span{
-    font-size: 18px;
+    font-size: 22px;
     margin-left: 20px;
     padding: 3px;
   }
@@ -207,15 +207,28 @@ export const SupportEquipaments = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   height: min-content;
   padding-bottom: 20px;
   margin-top:1rem;
   color: #fff;
   border: 5px solid;
-
- /*  border-left: 5px solid;
-  border-top: 5px solid;
-  border-right:5px solid; */
   background-color: rgba(0, 0, 0, 0.4);
+
+   @media (max-width:1840px) {
+      max-width:440px;
+  }
+`;
+export const Footer = styled.footer`
+  display: flex;
+  position:absolute;
+  top:95%;
+  left:40%;
+  color:#fff;
+  border-bottom: #fff 2px solid;
+  padding:0.5rem;
+  p{
+      font-size:18px;
+      letter-spacing:1px;
+    }
 `;
