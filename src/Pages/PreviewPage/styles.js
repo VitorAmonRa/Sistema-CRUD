@@ -223,3 +223,17 @@ export const SupportEquipaments = styled.div`
       max-width:440px;
   }
 `;
+export const Footer = styled.footer`
+  display: flex;
+  position:absolute;
+  top:95%;
+  left:40%;
+  color:#fff;
+  border-bottom: #fff 2px solid;
+  padding:0.5rem;
+  p{
+      font-size:18px;
+      letter-spacing:1px;
+    }
+`;
+
