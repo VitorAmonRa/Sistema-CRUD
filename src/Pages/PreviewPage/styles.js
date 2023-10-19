@@ -61,6 +61,10 @@ export const Title = styled.div`
   padding: 5px 0;
   width: 100%;
   border-bottom: 2px solid white;
+  &:nth-child(2){
+    font-size:16px;
+  }
+  
   @media (max-width:1440px) {
       h1{font-size: 28px;}
 }
@@ -218,6 +222,7 @@ export const SupportEquipaments = styled.div`
    @media (max-width:1840px) {
       max-width:440px;
   }
+
 `;
 export const Footer = styled.footer`
   display: flex;
@@ -231,4 +236,7 @@ export const Footer = styled.footer`
       font-size:18px;
       letter-spacing:1px;
     }
+
 `;
+
+
