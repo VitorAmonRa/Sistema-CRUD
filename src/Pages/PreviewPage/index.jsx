@@ -3,7 +3,7 @@ import { db } from '../../services/firebaseConnection';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import {Image, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,SectionThree,Main, SupportEquipaments} from './styles';
+import {Image, SectionOne, SectionTwo, SituationOfEquipments, BackupOfEquipments, Title, EquipmentsList,SectionThree,Main, SupportEquipaments,Footer} from './styles';
 import { Burger } from '../../Components/Burger'
 
 export const PreviewPage = () => { 
@@ -68,7 +68,9 @@ export const PreviewPage = () => {
 
           <SupportEquipaments>
             <Title> 
-              <h1> Equipamentos de Apoio </h1> 
+              <h1 style={{
+                fontSize:"24px"
+              }}> Equipamentos de Apoio </h1> 
             </Title>
             <EquipmentsList>
               {equipamentosDeApoio.map((item,index) => (
@@ -140,9 +142,6 @@ export const PreviewPage = () => {
               ))}
             </EquipmentsList>
           </BackupOfEquipments> 
-          <footer>
-            <p>Developed by Vitor Amon-Rá Fernandes</p>
-        </footer>
         </SectionTwo>
 
         <SectionThree>
@@ -163,7 +162,9 @@ export const PreviewPage = () => {
             </EquipmentsList>
           </SituationOfEquipments>
         </SectionThree>
-       
+       <Footer>
+          <p>Developed by Vitor Amon-Rá Fernandes</p>   
+       </Footer>
         </Main>
       </Image>
     </>
