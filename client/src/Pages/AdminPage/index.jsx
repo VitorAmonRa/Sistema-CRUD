@@ -78,7 +78,7 @@ export const AdminPage = () => {
       return;
     }
 
-    // Adicionando equipamentos ao banco de dados
+    // Adicionando equipamentos ao banco de dadoss
     addDoc(collection(db, "Equipamentos"), {
       name: equipments,
       situation: situation,
