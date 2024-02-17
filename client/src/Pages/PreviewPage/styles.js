@@ -96,6 +96,9 @@ export const EquipmentsList = styled.div`
     border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
     font-weight: bold;
   }
+  @media (min-width: 1921px){
+      li{font-size:16px;}
+      
   @media (min-width: 1440px) and (max-width:1920px) {
       li{font-size:18px;}
   
