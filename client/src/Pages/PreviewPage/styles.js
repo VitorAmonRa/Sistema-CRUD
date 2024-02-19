@@ -34,7 +34,7 @@ export const SituationOfEquipments = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 440px;
   height: min-content;
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.4);
