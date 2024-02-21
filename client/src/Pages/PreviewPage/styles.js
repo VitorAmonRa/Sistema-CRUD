@@ -42,9 +42,6 @@ export const SituationOfEquipments = styled.div`
   border: 5px solid;
   margin: 2%;
   padding-bottom: 20px;
-  @media (max-width:1840px) {
-      max-width:440px;
-  }
   @media (max-width:1440px) {
       max-width:320px; 
   }
