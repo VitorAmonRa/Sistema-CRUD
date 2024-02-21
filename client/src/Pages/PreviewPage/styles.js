@@ -210,7 +210,7 @@ export const SupportEquipaments = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;
+  max-width: 380px;
   height: min-content;
   padding-bottom: 20px;
   margin-top:1rem;
