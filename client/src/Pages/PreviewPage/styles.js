@@ -217,11 +217,6 @@ export const SupportEquipaments = styled.div`
   color: #fff;
   border: 5px solid;
   background-color: rgba(0, 0, 0, 0.4);
-
-   @media (max-width:1840px) {
-      max-width:440px;
-  }
-
 `;
 export const Footer = styled.footer`
   display: flex;
