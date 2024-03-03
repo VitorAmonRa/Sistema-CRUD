@@ -95,7 +95,7 @@ export const EquipmentsList = styled.div`
   }
   @media (min-width: 1921px){
       li{font-size:16px;}
-      
+  }
   @media (min-width: 1440px) and (max-width:1920px) {
       li{font-size:18px;}
   
