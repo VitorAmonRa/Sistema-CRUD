@@ -165,7 +165,7 @@ export const PreviewPage = () => {
           </SituationOfEquipments>
         </SectionThree>
        <Footer>
-          <p>Developed by Vitor Amon-Rá Fernandes</p>   
+          <p>Desenvolvido por Vitor Amon-Rá Fernandes</p>   
        </Footer>
         </Main>
       </Image>
