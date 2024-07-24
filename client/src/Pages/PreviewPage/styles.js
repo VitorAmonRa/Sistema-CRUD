@@ -34,7 +34,7 @@ export const SituationOfEquipments = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 380px;
   height: min-content;
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.4);
@@ -42,9 +42,6 @@ export const SituationOfEquipments = styled.div`
   border: 5px solid;
   margin: 2%;
   padding-bottom: 20px;
-  @media (max-width:1840px) {
-      max-width:440px;
-  }
   @media (max-width:1440px) {
       max-width:320px; 
   }
@@ -94,8 +91,10 @@ export const EquipmentsList = styled.div`
     width: 100%;
     margin: 10px 0;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-    font-size: 22px;
     font-weight: bold;
+  }
+  @media (min-width: 1921px){
+      li{font-size:16px;}
   }
   @media (min-width: 1440px) and (max-width:1920px) {
       li{font-size:18px;}
@@ -211,18 +210,13 @@ export const SupportEquipaments = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;
+  max-width: 380px;
   height: min-content;
   padding-bottom: 20px;
   margin-top:1rem;
   color: #fff;
   border: 5px solid;
   background-color: rgba(0, 0, 0, 0.4);
-
-   @media (max-width:1840px) {
-      max-width:440px;
-  }
-
 `;
 export const Footer = styled.footer`
   display: flex;

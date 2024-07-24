@@ -21,6 +21,12 @@ export const IconDiv = styled.div`
         height:100%;
         cursor:pointer;
     }
+    @media (min-width: 1920px) {
+        max-width:20px;
+        max-height:20px;
+        button{
+            font-size:15px;
+        }
     @media (max-width: 1281px) {
         width:auto;
         height:auto;
