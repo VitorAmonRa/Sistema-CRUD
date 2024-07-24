@@ -1,6 +1,9 @@
 import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items:center;
   max-width: 100%;
   min-height:100vh;
   width: 100%;
@@ -9,9 +12,9 @@ export const Container = styled.div`
   
 `;
 export const ButtonEmail = styled.span`
-  display:flex;
+ /*  display:flex;
   flex-direction: column;
-  position:relative;
+  position:relative; 
   justify-content:center;
   align-items:center;
   width: 100%;
@@ -20,48 +23,31 @@ export const ButtonEmail = styled.span`
   max-height:50px;
   top: 5rem;
   left: 50%;
-  transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%); */
 `;
 export const ContainerForm = styled.div`
   display:flex;
   flex-direction: column;
-  position:relative;
   justify-content:center;
   align-items:center;
-  width: 100%;
-  max-width: 1000px;
+  width:100%;
   height:100vh;
-  max-height:700px;
-  border: 3px solid black;
-  border-radius: 10px;
-  top: 45%;
-  left: 50%;
-  transform:translate(-50%,-50%);
-  @media (max-width:1920px) {
-      max-width:900px;
-  
-  }
-
 `;
 export const Form = styled.form`
     display:flex;
     flex-direction: column;
     max-width:900px;
-    max-height:600px;
-    padding: 20px 0 ;
+    max-height:500px;
     width:100%;
     height:100vh;
-  @media (max-width:1920px) {
-    max-width:850px;
-  
-  }
 `;
 export const Field = styled.div`
     display:flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
-    padding: 18px 0 40px 0;
+    max-height:100px;
+    height:100%;
     margin: 18px 0;
     border: 2px solid black;
     border-radius: 5px;
@@ -70,36 +56,29 @@ export const Label = styled.label`
   font-size: 22px;
   font-weight: bold;
   padding: 5px;
-  @media (max-width:1920px) {
-    font-size: 20px;
-  }
 `;
 export const InputText = styled.input` 
   font-size: 15px;
   width:100%;
   height:100vh;
-  max-width: 500px;
-  height: 30px;
-  padding: 15px;
+  max-width: 60%;
+  max-height: 40%;
+  padding: 13px;
   word-wrap: break-word;
   cursor: pointer;
   &:hover{
       border: 2px solid black;
     }
-  @media (max-width:1920px) {
+ /*  @media (max-width:1920px) {
     height: 20px;
-  }
+  } */
 `
-export const Select = styled.div`
+export const Select = styled.select`
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size: 19px;
-  margin-top: 10px;
-  width:100%;
-  height:100vh;
-  max-width: 900px;
-  max-height: 30px;
+  width:60%;
+  height:40%;
   font-weight: bold;
   cursor: pointer;
   div { 
@@ -107,8 +86,6 @@ export const Select = styled.div`
     align-items:center;
     padding:0px 8px;
     input{
-      width: 22px;
-      height: 20px;
       color:#fff;
       background-color:red;
       cursor: pointer;
@@ -124,9 +101,10 @@ export const Select = styled.div`
       cursor:pointer;
     }
   }
-  @media (max-width:1920px) {
-    font-size: 18px;
+  @media (max-width:626px) {
+    font-size:9px;
   }
+
 `
 export const ButtonSection = styled.div`
   display:flex;
@@ -165,18 +143,18 @@ export const ModalSection = styled.section`
   justify-content:center;
   align-items:center;
   max-width:800px;
-  max-height:200px;
+  max-height:200px; 
   width:100%;
   height: 100vh;
-  padding: 10px;
-  margin: 18px 0;
+ /*  padding: 10px; */
+/*   margin: 0 0 10px 0; */
   border: 2px solid black;
   border-radius: 5px;
   background-color: black;
   .modal-div{
     width:100%;
     height: 100vh;
-    max-height: 200px;
+    max-height: 400px;
     color:#fff;
     overflow-y: scroll;
     ::-webkit-scrollbar-thumb{
@@ -212,7 +190,6 @@ export const ModalSection = styled.section`
       }
     }
   }:hover{
-
     max-height:700px;
     max-width:1000px;
     position:absolute;
@@ -224,9 +201,6 @@ export const ModalSection = styled.section`
         padding:5px 20px;
       }
     }
-  }
-  @media (max-width:1920px) {
-    max-width:700px;
   }
 `
 export const LabelChecked = styled.label`

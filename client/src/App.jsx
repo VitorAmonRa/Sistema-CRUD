@@ -7,15 +7,17 @@ import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer} from 'react-toastify'
 import { Private } from "./Routes/Private";
 import PreviewPage from "./Pages/PreviewPage";
+import PreviewSpreaderPage from "./Pages/PreviewSpreaderPage";
 
 function App() {
 
   return (
     <>
     <Global/>
-    <ToastContainer autoClose={1500} limit={4} />
+    <ToastContainer autoClose={500} limit={4} />
       <Router>
         <Routes>
+          <Route path="PreviewSpreaderPage" element={ <PreviewSpreaderPage/> }/>
           <Route path="PreviewPage" element={ <PreviewPage/> }/>
           <Route path="login" element={ <LoginPage/> }/>
           <Route path="/" element={ 

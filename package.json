@@ -18,7 +18,8 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.3",
     "react-toastify": "^9.1.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
   },
   "devDependencies": {
     "@types/node-sass": "^4.11.3",

@@ -4,8 +4,6 @@ import Porto from '../../Images/Porto.png'
 
 export const ContainerNav = styled.div`
   width: 100%;
-  height: 100vh;
-  max-height: 70px;
 `;
 
 export const MainDiv = styled.nav`
@@ -15,7 +13,6 @@ export const MainDiv = styled.nav`
   align-items: center;
   border-bottom: 3px solid black;
   background-image:linear-gradient(to right, #fff, red);
-  padding: 0 0 25px 0;
 `;
 
 export const Logo = styled.div`
@@ -27,21 +24,22 @@ export const Logo = styled.div`
   max-width:300px;
   height:100vh;
   max-height:60px;
-  padding:15px;
   margin:10px 0 0 20px;
 `;
 export const DivNav = styled.div`
   display: flex;
+  justify-content:center;
   text-decoration: none;
-  height:70px;
-  padding: 20px;
-
+  width:100%;
+  max-width:300px;
+  height:100vh;
+  max-height:40px;
 `;
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  margin: 0 30px;
-  padding: 20px 40px;
+  margin:0 30px;
+  padding: 18px;
   font-size:17px;
   font-weight: bold;
   border: 2px solid black;
