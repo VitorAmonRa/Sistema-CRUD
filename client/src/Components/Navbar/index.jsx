@@ -23,11 +23,18 @@ export const Navbar = (data) => {
         <MainDiv>
           <Logo/>
           <DivNav>
+          <Button>
+              <Link 
+              to="PreviewSpreaderPage" 
+              relative="path"
+              >Spreader Page
+              </Link>
+              </Button>
             <Button>
               <Link 
               to="PreviewPage" 
               relative="path"
-              >Preview
+              >Preview Page
               </Link>
               </Button>
             <Button onClick={handleLogOut}>Logout</Button>

@@ -28,10 +28,9 @@ export const Logo = styled.div`
 `;
 export const DivNav = styled.div`
   display: flex;
-  justify-content:center;
+  justify-content:end;
   text-decoration: none;
   width:100%;
-  max-width:300px;
   height:100vh;
   max-height:40px;
 `;
@@ -45,6 +44,7 @@ export const Button = styled.button`
   border: 2px solid black;
   color:black;
   text-decoration: none;
+
   cursor: pointer;
   a{
     text-decoration: none;
