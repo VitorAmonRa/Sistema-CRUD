@@ -121,7 +121,9 @@ export const PreviewPage = () => {
 
            <BackupOfEquipments>
             <Title>
-              <h1>Programação do Dia &rarr; </h1>
+              <h1 style={{
+                fontSize:"28px"
+              }} >Programação do Dia &rarr; </h1>
               {equipamentosDateTime.map((item,index) => (
                  <> 
                  <div key={index}>
@@ -163,7 +165,7 @@ export const PreviewPage = () => {
           </SituationOfEquipments>
         </SectionThree>
        <Footer>
-          <p>Developed by Vitor Amon-Rá Fernandes</p>   
+          <p>Desenvolvido por Vitor Amon-Rá Fernandes</p>   
        </Footer>
         </Main>
       </Image>
