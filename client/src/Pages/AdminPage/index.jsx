@@ -146,85 +146,6 @@ export const AdminPage = () => {
                 <option value={"Reserva"}> Equipamento Reserva </option>
                 <option value={"Proximo-dia"}> Equipamento para o proximo dia </option>
                 <option value={"Apoio"}> Equipamento de Apoio </option>
-                {/* <div className="checkbox">
-                  <input
-                   className="check1"
-                    type="checkbox"
-                    value="Liberado"
-                    id="1"
-                    checked={situation === "Liberado"}
-                    onChange={(e) => setSituation(e.target.value)}
-                  />
-                  <label htmlFor="1">Liberado</label>
-                </div>
-
-                <div className="checkbox">
-                  <input
-                    type="checkbox"
-                    value="em-liberação"
-                    id="2"
-                    checked={situation === "em-liberação"}
-                    onChange={(e) => setSituation(e.target.value)}
-                  />
-                  <label htmlFor="2">Em Liberação</label>
-                </div>
-
-                <div className="checkbox">
-                  <input
-                    type="checkbox"
-                    value="não-liberado"
-                    id="3"
-                    checked={situation === "não-liberado"}
-                    onChange={(e) => setSituation(e.target.value)}
-                  />
-                  <label htmlFor="3">Não Liberado</label>
-                </div>
-
-                <div className="checkbox">
-                  <input
-                    type="checkbox"
-                    value="reserva"
-                    id="4"
-                    checked={situation === "reserva"}
-                    onChange={(e) => setSituation(e.target.value)}
-                  />
-                  <label htmlFor="4">Reserva</label>
-                </div>
-
-                <div className="checkbox">
-                  <input
-                    type="checkbox"
-                    value="proximo-dia"
-                    id="5"
-                    checked={situation === "proximo-dia"}
-                    onChange={(e) => setSituation(e.target.value)}
-                  />
-                  <label htmlFor="5">Proximo Dia</label>
-                </div>
-
-                <div className="checkbox">
-                  <input
-                    className="checkbox"
-                    type="checkbox"
-                    value="data"
-                    id="6"
-                    checked={situation === "data"}
-                    onChange={(e) => setSituation(e.target.value)}
-                  />
-                  <label htmlFor="6">Data</label>
-                </div>
-
-                <div className="checkbox">
-                  <input
-                    type="checkbox"
-                    value="Apoio"
-                    id="7"
-                    checked={situation === "Apoio"}
-                    onChange={(e) => setSituation(e.target.value)}
-                  />
-                  <label htmlFor="7">Apoio</label>
-                </div> */}
-
               </Select>
             </Field>
             <ButtonSection>
@@ -239,10 +160,11 @@ export const AdminPage = () => {
                   const toggleColor = (item) => {
                     switch(item.situation){
                       case"Liberado": return "green";
-                      case "em-liberação": return "yellow";
-                      case "não-liberado": return "red";
-                      case "reserva": return "blue";
-                      case "proximo-dia": return "white";
+                      case "Em-liberação": return "yellow";
+                      case "Não-liberado": return "red";
+                      case "Reserva": return "blue";
+                      case "Proximo-dia": return "white";
+                      case "Apoio" : return "orange"
                     }
                   }
                   return(
