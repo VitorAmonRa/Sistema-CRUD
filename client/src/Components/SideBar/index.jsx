@@ -11,14 +11,27 @@ export const SideBar = ({open}) => {
   const handleSwitchAdmin = () => {
     navigate("/", {replace:true})
   }
-  const handleSwitchHome = () => {
-    navigate("/", {replace:true})
+  const handleSwitchPreview = () => {
+    navigate("/PreviewPage", {replace:true})
+  }
+  const handleSwitchSpreader = () => {
+    navigate("/PreviewSpreaderPage", {replace:true})
   }
   return (
     <>
       <Menu open={open}>
-        <div className='main'>
+        <div >
           <button onClick={handleSwitchAdmin}><GrUserAdmin/><span>Admin</span></button>
+        </div>
+        <div>
+         <button onClick={handleSwitchPreview}>
+          <span>Preview Page</span>
+        </button>
+        </div>
+        <div>
+         <button onClick={handleSwitchSpreader}>
+          <span>Spreader Page</span>
+        </button>
         </div>
       </Menu>
     </>

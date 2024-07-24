@@ -24,21 +24,21 @@ export const PreviewPage = () => {
           situation:doc.data().situation
         })
       })
-      setEquipments(list)
+      setEquipments(list) 
     })
   },[])
   
   const equipamentoLiberado = equipments.filter(equipments => equipments.situation == "Liberado")
 
-  const equipamentosNãoLiberados = equipments.filter(equipments => equipments.situation == "não-liberado")
+  const equipamentosNãoLiberados = equipments.filter(equipments => equipments.situation == "Não-liberado")
   
-  const equipamentosEmLiberação = equipments.filter(equipments => equipments.situation == "em-liberação")
+  const equipamentosEmLiberação = equipments.filter(equipments => equipments.situation == "Em-liberação")
  
-  const equipamentosReservas = equipments.filter(equipments => equipments.situation == "reserva")
+  const equipamentosReservas = equipments.filter(equipments => equipments.situation == "Reserva")
   
-  const equipamentosProximoDia = equipments.filter(equipments => equipments.situation == "proximo-dia")
+  const equipamentosProximoDia = equipments.filter(equipments => equipments.situation == "Proximo-dia")
   
-  const equipamentosDateTime = equipments.filter(equipments => equipments.situation == "data")
+  const equipamentosDateTime = equipments.filter(equipments => equipments.situation == "Data")
 
   const equipamentosDeApoio = equipments.filter(equipments => equipments.situation == "Apoio")
 

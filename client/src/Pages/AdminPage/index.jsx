@@ -11,7 +11,6 @@ import {
   Select,
   ButtonSection,
   ModalSection,
-  ButtonEmail,
   LabelChecked, 
   InputChecked, 
   Switch,
@@ -22,7 +21,6 @@ import {
   addDoc,
   collection,
   doc,
-  setDoc,
   deleteDoc,
   onSnapshot,
   orderBy,
@@ -31,16 +29,13 @@ import {
 } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
-import emailjs from "@emailjs/browser"
-import { saveAs } from 'file-saver';
 
 export const AdminPage = () => {
   const [change, setChange] = useState(true);  
   const [equipments, setEquipments] = useState("");
   const [situation, setSituation] = useState({});
   const [equipmentsModal, setEquipmentsModal] = useState([]);
-  const [message, setMessage] = useState("");
-  const [email, setEmail] = useState("");
+  const [pres, setPres] = useState([]);
 
   useEffect(() => {
     const equipmentsRef = collection(db, "Equipamentos");
@@ -66,9 +61,6 @@ export const AdminPage = () => {
     await deleteDoc(docRef);
   }
 
-  const handleChange = () =>{
-    setChange(change => !change)
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -86,6 +78,7 @@ export const AdminPage = () => {
     })
       .then(() => {
         setEquipments("");
+        setPres("")
         if (situation == "data"){
           toast.success("Data registrada com sucesso");
         }else{
@@ -97,51 +90,12 @@ export const AdminPage = () => {
         toast.error("Error");
       });
   };
-  
-  const handleOnSubmit = (e) =>{
-    e.preventDefault();
-    
-    const templateParams = {
-      message : message,
-      email: email,
-    }
-    emailjs.send("service_3hwqh4i", "template_g6tqn45", templateParams, "d4S6gHJJ1vnRY1l1Z")
-    .then((response) => {
-      console.log("Email Enviado")
-      setMessage("")
-      setEmail("")
-    })
-  }
-
-  const equipamentoLiberado = equipmentsModal.filter(equipments => equipments.situation == "Liberado")
-
-
-/*   const fileSaver = () => {
-    equipmentsModal.filter((item,index) => {
-      const equipmentsModalName = item.name
-      const stringFy = JSON.stringify(equipmentsModalName)
-
-    })
-    var blob = new Blob([stringFy], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "hello world.txt");
-    console.log("ALO",stringFy)
-  } */
 
   return (
     <>
       <Global />
       <Container>
         <Navbar />
-        <LabelChecked>
-          <span> Selecionado {change ? 'Equipamentos' : 'Email'}</span>
-          <InputChecked 
-          change={change} 
-          type='checkbox' 
-          onChange={handleChange}
-          />
-          <Switch />
-      </LabelChecked>
-        { change == true ? 
         <ContainerForm>
           <Form onSubmit={handleSubmit}>
             <Field>
@@ -185,7 +139,15 @@ export const AdminPage = () => {
                 value={situation}
                 onChange={(e) => setSituation(e.target.value)}
               >
-                <div className="checkbox">
+                <option value={"Liberado"}> Liberado </option>
+                <option value={"Não-liberado"}> Não Liberado </option>
+                <option value={"Em-liberação"}> Em Liberação </option>
+                <option value={"Data"}> Data </option>
+                <option value={"Reserva"}> Equipamento Reserva </option>
+                <option value={"Proximo-dia"}> Equipamento para o proximo dia </option>
+                <option value={"Apoio"}> Equipamento de Apoio </option>
+                <option value={"LocalizaçãoSpreader"}> Localização de spreader </option>
+                {/* <div className="checkbox">
                   <input
                    className="check1"
                     type="checkbox"
@@ -262,7 +224,7 @@ export const AdminPage = () => {
                     onChange={(e) => setSituation(e.target.value)}
                   />
                   <label htmlFor="7">Apoio</label>
-                </div>
+                </div> */}
 
               </Select>
             </Field>
@@ -302,41 +264,7 @@ export const AdminPage = () => {
             <></>
           )}
         </ContainerForm> 
-        : <ContainerForm>
-          <Form onSubmit={handleOnSubmit}>
-            <Field>
-              <Label>Email</Label>
-              <InputText
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled
-                required
-                placeholder="Não funcional, fase de testes"
-              />
-            </Field>
-            <Field>
-              <Label>Mensagem</Label> 
-              <PreviewMessage>
-                <InputText 
-                onChange={(e) => setMessage(e.target.value)}
-                value={message}
-                placeholder="Não funcional, fase de testes"
-                disabled
-                style={{
-                  height: "100vh", 
-                  maxHeight: "100px",
-                  width:"100%",
-                  maxWidth:"80%"
-                }}/>
-              </PreviewMessage>
-            </Field>
-          </Form>
-        </ContainerForm>
-        }
-          
-       
       </Container>
     </>
   );
-};
+}
