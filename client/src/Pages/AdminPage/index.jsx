@@ -146,7 +146,6 @@ export const AdminPage = () => {
                 <option value={"Reserva"}> Equipamento Reserva </option>
                 <option value={"Proximo-dia"}> Equipamento para o proximo dia </option>
                 <option value={"Apoio"}> Equipamento de Apoio </option>
-                <option value={"LocalizaçãoSpreader"}> Localização de spreader </option>
                 {/* <div className="checkbox">
                   <input
                    className="check1"
