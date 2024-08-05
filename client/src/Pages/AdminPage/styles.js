@@ -81,25 +81,16 @@ export const Select = styled.select`
   height:40%;
   font-weight: bold;
   cursor: pointer;
-  div { 
+  span{
     display: flex;
+    width:100%;
+    height:100%;
+  }
+  option { 
+    display: flex;
+    font-size:1rem;
     align-items:center;
     padding:0px 8px;
-    input{
-      color:#fff;
-      background-color:red;
-      cursor: pointer;
-      .check1{
-        background-color:red;
-      }
-      &:checked + label{
-            border-color: red;
-        }
-    
-    }
-    label{
-      cursor:pointer;
-    }
   }
   @media (max-width:626px) {
     font-size:9px;
