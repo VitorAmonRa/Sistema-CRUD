@@ -55,33 +55,27 @@ export const Title = styled.div`
 `;
 export const EquipmentsList = styled.div`
   display: flex;
-  justify-content:space-between;
+  /* justify-content:space-between; */
   font-size: 20px;
   width: 100%;
   flex-wrap:wrap;
-  li {
+  div{
     display: flex;
-    flex-direction: row;
+    padding:1rem;
+    flex-direction: column;
     justify-content:center;
     align-items:center;
-    padding: 0 10px;
-    width: 100%;
-    margin: 0.5rem 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-    font-size: 20px;
-    font-weight: bold;
-    textarea{
+    li {
       display: flex;
+      flex-direction: row;
       justify-content:center;
       align-items:center;
-      font-size:1.2rem;
-      text-align:center;
-      margin: 0 1rem;
-      padding:0.5rem 1rem;
-      height:3rem;
-      background-color: transparent;
-      color:#fff;
-      resize:none;
+      padding: 0 10px;
+      width: 100%;
+      margin: 0.5rem 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+      font-size: 20px;
+      font-weight: bold;
     }
   }
 `;

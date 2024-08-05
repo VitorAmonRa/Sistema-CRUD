@@ -31,7 +31,7 @@ import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
 
 export const AdminPage = () => {
-  const [change, setChange] = useState(true);  
+  const [change, setChange] = useState(false);  
   const [equipments, setEquipments] = useState("");
   const [situation, setSituation] = useState({});
   const [equipmentsModal, setEquipmentsModal] = useState([]);
@@ -90,7 +90,6 @@ export const AdminPage = () => {
         toast.error("Error");
       });
   };
-
   return (
     <>
       <Global />
@@ -132,54 +131,81 @@ export const AdminPage = () => {
               </>)}
             </Field>
             <Field>
-              <Label>Situação</Label>
-              <Select
-                name="equipments"
-                id="equipments"
-                value={situation}
-                onChange={(e) => setSituation(e.target.value)}
-              >
-                <option value={"Liberado"}> Liberado </option>
-                <option value={"Não-liberado"}> Não Liberado </option>
-                <option value={"Em-liberação"}> Em Liberação </option>
-                <option value={"Data"}> Data </option>
-                <option value={"Reserva"}> Equipamento Reserva </option>
-                <option value={"Proximo-dia"}> Equipamento para o proximo dia </option>
-                <option value={"Apoio"}> Equipamento de Apoio </option>
-              </Select>
-            </Field>
+            <Label htmlFor="equipments">Situação</Label>
+            <Select
+              name="equipments"
+              id="equipments"
+              value={situation}
+              onChange={(e) => setSituation(e.target.value)}
+              disabled={change}
+            >
+              <option></option>
+              <option value={"Liberado"}> Liberado </option>
+              <option value={"Não-liberado"}> Não Liberado </option>
+              <option value={"Em-liberação"}> Em Liberação </option>
+              <option value={"Data"}> Data </option>
+              <option value={"Reserva"}> Equipamento Reserva </option>
+              <option value={"Proximo-dia"}> Equipamento para o proximo dia </option>
+              <option value={"Apoio"}> Equipamento de Apoio </option>
+              <option value={"RT01"}> RT01 </option>
+              <option value={"RT02"}> RT02 </option>
+              <option value={"RT03"}> RT03 </option>
+              <option value={"RT04"}> RT04 </option>
+              <option value={"RT05"}> RT05 </option>
+              <option value={"RT06"}> RT06 </option>
+              <option value={"RT07"}> RT07 </option>
+              <option value={"RT08"}> RT08 </option>
+              <option value={"RT09"}> RT09 </option>
+              <option value={"RT10"}> RT10 </option>
+              <option value={"RT11"}> RT11 </option>
+              <option value={"RT12"}> RT12 </option>
+              <option value={"RT13"}> RT13 </option>
+              <option value={"RT14"}> RT14 </option>
+              <option value={"RT15"}> RT15 </option>
+              <option value={"RT16"}> RT16 </option>
+              <option value={"RT17"}> RT17 </option>
+              <option value={"RT18"}> RT18 </option>
+              <option value={"ST01"}> ST01 </option>
+              <option value={"ST02"}> ST02 </option>
+              <option value={"ST03"}> ST03 </option>
+              <option value={"ST04"}> ST04 </option>
+              <option value={"ST05"}> ST05 </option>
+              <option value={"ST06"}> ST06 </option>
+            </Select>
+          </Field>
             <ButtonSection>
               <button type="submit">Enviar</button>
             </ButtonSection>
-            
           </Form>
           {equipmentsModal.length > 0 ? (
             <ModalSection>
               <div className="modal-div">
-                {equipmentsModal.map((item, index) => {
-                  const toggleColor = (item) => {
-                    switch(item.situation){
-                      case"Liberado": return "green";
-                      case "Em-liberação": return "yellow";
-                      case "Não-liberado": return "red";
-                      case "Reserva": return "blue";
-                      case "Proximo-dia": return "white";
-                      case "Apoio" : return "orange"
-                    }
+              {equipmentsModal.map((item, index) => {
+                const toggleColor = (item) => {
+                  switch(item.situation || item.situationDois){
+                    case"Liberado": return "green";
+                    case "Em-liberação": return "yellow";
+                    case "Não-liberado": return "red";
+                    case "Reserva": return "blue";
+                    case "Proximo-dia": return "white";
+                    case "Apoio" : return "orange";
+                    case "Data" : return "greenyellow";
+                    default : return "tan";
                   }
-                  return(
-                    <>
-                      <div 
-                      key={index}
-                      style={{borderColor: toggleColor(item)}}
-                      >
-                        <p>{item.name}</p>
-                        <button onClick={() => handleDelete(item.id)}>X</button>
-                      </div>
-                    </>
-                  )
-                })}
-              </div>
+                }
+                return(
+                  <>
+                    <div 
+                    key={index}
+                    style={{borderColor: toggleColor(item)}}
+                    >
+                      <p>{item.name}</p>
+                      <button onClick={() => handleDelete(item.id)}>X</button>
+                    </div>
+                  </>
+                )
+              })}
+            </div> 
             </ModalSection>
           ) : (
             <></>
