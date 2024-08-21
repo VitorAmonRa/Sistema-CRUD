@@ -44,13 +44,15 @@ export const Form = styled.form`
 export const Field = styled.div`
     display:flex;
     flex-direction: column;
-    justify-content:center;
     align-items:center;
     max-height:100px;
     height:100%;
     margin: 18px 0;
     border: 2px solid black;
     border-radius: 5px;
+    :nth-child(2){
+      max-height:15rem;
+    }
 `;
 export const Label = styled.label`
   font-size: 22px;
@@ -69,29 +71,23 @@ export const InputText = styled.input`
   &:hover{
       border: 2px solid black;
     }
- /*  @media (max-width:1920px) {
-    height: 20px;
-  } */
 `
 export const Select = styled.select`
   display:flex;
   justify-content:center;
   align-items:center;
-  width:60%;
-  height:40%;
+  width:40%;
+  height:100%;
+  max-height: 10rem;
   font-weight: bold;
   cursor: pointer;
-  span{
-    display: flex;
-    width:100%;
-    height:100%;
-  }
   option { 
     display: flex;
-    font-size:1rem;
     align-items:center;
+    font-size:1rem;
     padding:0px 8px;
   }
+    
   @media (max-width:626px) {
     font-size:9px;
   }
@@ -99,32 +95,25 @@ export const Select = styled.select`
 `
 export const ButtonSection = styled.div`
   display:flex;
-  justify-content:space-around;
+  justify-content:center;
     button{
       display:flex;
       justify-content:center;
       align-items:center;
       padding: 20px 0;
       margin: 20px;
-      font-size: 20px;
+      font-size: 1rem;
       font-weight: bold;
       width: 100%;
       height:100vh;
-      max-width: 210px;
-      max-height: 30px;
+      max-width: 10rem;
+      max-height: 2rem;
       cursor: pointer;
       border: 2px solid black;
       border-radius: 5px;
     &:hover{
       background-color:red;
       color:#fff;
-    }
-  }
-  @media (max-width:1920px) {
-    button{
-      max-width: 150px;
-      padding: 15px;
-      font-size: 15px;
     }
   }
 ` 
