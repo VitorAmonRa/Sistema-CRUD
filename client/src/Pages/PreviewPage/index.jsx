@@ -21,7 +21,8 @@ export const PreviewPage = () => {
         list.push({
           id: doc.id,
           name:doc.data().name,
-          situation:doc.data().situation
+          situation:doc.data().situation,
+          created: doc.data().created,
         })
       })
       setEquipments(list) 

@@ -50,12 +50,11 @@ export const Title = styled.div`
   margin: 2px 0;
   padding: 5px 0;
   width: 100%;
-  font-size:15px;
-  border-bottom: 2px solid white;
+  font-size:1rem;
 `;
 export const EquipmentsList = styled.div`
   display: flex;
-  /* justify-content:space-between; */
+  justify-content:space-between;
   font-size: 20px;
   width: 100%;
   flex-wrap:wrap;

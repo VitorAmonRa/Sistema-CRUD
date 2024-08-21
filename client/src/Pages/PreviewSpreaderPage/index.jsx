@@ -60,17 +60,19 @@ export const PreviewPage = () => {
 
         <SectionOne>
           <SituationOfEquipments style={{
-                borderColor:""
+                borderColor:"#0ceaf1 "
               }}>
             <Title>
-              <h1>Localização dos Spreaders</h1>
+              <h1 style={{
+                borderBottom:"2px solid #0ceaf1"
+              }} >Localização dos Spreaders</h1>
             </Title>
             <EquipmentsList>
               <div><li>
               {RT01.map((item,index) => (
                  <>  
                   <li key={index}>
-                  RT01 = {item.name}
+                 <span> RT01 </span> = {item.name}
                   </li>
                  </>
               ))}

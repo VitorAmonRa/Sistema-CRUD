@@ -29,6 +29,8 @@ import {
 } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
+import { GeradorPDFdeSpreader } from "../../Components/PDFSpreader";
+import { GeradorPDFdeEquipamento } from "../../Components/PDFEquip"
 
 export const AdminPage = () => {
   const [change, setChange] = useState(false);  
@@ -74,7 +76,7 @@ export const AdminPage = () => {
     addDoc(collection(db, "Equipamentos"), {
       name: equipments,
       situation: situation,
-      created: new Date(),
+      created: new Date().toLocaleString()
     })
       .then(() => {
         setEquipments("");
@@ -137,9 +139,9 @@ export const AdminPage = () => {
               id="equipments"
               value={situation}
               onChange={(e) => setSituation(e.target.value)}
-              disabled={change}
+              size={15}
             >
-              <option></option>
+              <option> Selecione uma opção abaixo</option>
               <option value={"Liberado"}> Liberado </option>
               <option value={"Não-liberado"}> Não Liberado </option>
               <option value={"Em-liberação"}> Em Liberação </option>
@@ -175,6 +177,8 @@ export const AdminPage = () => {
           </Field>
             <ButtonSection>
               <button type="submit">Enviar</button>
+              <GeradorPDFdeEquipamento/>
+              <GeradorPDFdeSpreader/>
             </ButtonSection>
           </Form>
           {equipmentsModal.length > 0 ? (
