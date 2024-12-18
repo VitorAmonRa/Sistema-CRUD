@@ -123,7 +123,7 @@ export const PreviewPage = () => {
            <BackupOfEquipments>
             <Title>
               <h1 style={{
-                fontSize:"28px"
+                fontSize:"22px"
               }} >Programação do Dia &rarr; </h1>
               {equipamentosDateTime.map((item,index) => (
                  <> 
@@ -165,9 +165,6 @@ export const PreviewPage = () => {
             </EquipmentsList>
           </SituationOfEquipments>
         </SectionThree>
-       <Footer>
-          <p>Desenvolvido por Vitor Amon-Rá Fernandes</p>   
-       </Footer>
         </Main>
       </Image>
     </>
